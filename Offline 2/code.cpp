@@ -45,19 +45,16 @@ void boarding_on_plane(Passenger &p)
 {
 	int cur_time = get_current_time();
 	printf("Passenger %d has started waiting to be boarded at time %d\n",p.pid,cur_time);
-	// cout<<"Passenger "<<p.pid<<" : has started waiting to be boarded at time "<<cur_time<<endl;
 
 	pthread_mutex_lock(&boarding_mutex);
 
 	cur_time = get_current_time();
 	printf("Passenger %d has started boarding the plane at time %d\n",p.pid,cur_time);
-	// cout<<"Passenger "<<p.pid<<" : has started boarding the plane at time "<<cur_time<<endl;
 	
 	sleep(boarding_y);
 	
 	cur_time = get_current_time();
 	printf("Passenger %d has boarded the plane at time %d\n",p.pid,cur_time);
-	// cout<<"Passenger "<<p.pid<<" : has boarded the plane at time "<<cur_time<<endl;
 	
 	pthread_mutex_unlock(&boarding_mutex);
 }
@@ -68,19 +65,16 @@ void security_check(Passenger &p)
 	int belt_id = random(0,belts-1);
 	int cur_time = get_current_time();
 	printf("Passenger %d has started waiting for security check in belt %d from time %d\n",p.pid,belt_id,cur_time);
-	// cout<<"Passenger "<<p.pid<<" : has started waiting for security check in belt " <<belt_id<< " from time "<<cur_time<<endl;
 
 	sem_wait(&belt_capacity_sem[belt_id]); //down
 
 	cur_time = get_current_time();
 	printf("Passenger %d has started the security check at time %d\n",p.pid,cur_time);
-	// cout<<"Passenger "<<p.pid<<" : has started the security check at time "<<cur_time<<endl;
 	
 	sleep(security_x);
 
 	cur_time = get_current_time();
 	printf("Passenger %d crossed the security check at time %d\n",p.pid,cur_time);
-	// cout<<"Passenger "<<p.pid<<" : has crossed the security check at time "<<cur_time<<endl;
 
 	sem_post(&belt_capacity_sem[belt_id]); //up
 }
@@ -91,13 +85,11 @@ void checkin_at_kiosk(Passenger &p)
 
 	int cur_time = get_current_time();
 	printf("Passenger %d has started self-check in at kiosk ... at time %d\n",p.pid,cur_time);
-	// cout<<"Passenger "<<p.pid<<" : has started self-check in at kiosk ... at time "<<cur_time<<endl;
 	
 	sleep(checkin_at_kiosk_w);
 	
 	cur_time = get_current_time();
 	printf("Passenger %d has finished check in at time %d\n",p.pid,cur_time);
-	// cout<<"Passenger "<<p.pid<<" : has finished check in at time "<<cur_time<<endl;
 	
 	sem_post(&kiosk_capacity_sem); // up	
 }
@@ -107,9 +99,8 @@ void * arrival(void* p)
 	struct Passenger *passenger = (struct Passenger*)p;
 	int cur_time = get_current_time();
 	printf("Passenger %d has arrived at time %d\n",(*passenger).pid,cur_time);
-	// cout<<"Passenger "<<(*passenger).pid<<" has arrived at time "<<get_current_time()<<endl;
 
-	// checkin_at_kiosk(*passenger);
+	checkin_at_kiosk(*passenger);
 	security_check(*passenger);
 	boarding_on_plane(*passenger);
 }
