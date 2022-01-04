@@ -1,0 +1,1 @@
+./1705010.sh input.txt "working dir"

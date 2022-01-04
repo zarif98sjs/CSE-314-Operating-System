@@ -1,0 +1,5 @@
+working_dir/dir1/subdir2/pdfs1.pdf
+working_dir/dir1/subdir2/pdfs4.pdf
+working_dir/dir3/subdir6/pdfs5.pdf
+working_dir/dir3/pdfs7.pdf
+

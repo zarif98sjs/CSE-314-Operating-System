@@ -1,0 +1,2 @@
+working_dir/dir3/subdir6/abc1
+working_dir/abc2

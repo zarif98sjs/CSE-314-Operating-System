@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0058)http://www.ambrsoft.com/TrigoCalc/Circles2/circlrLine_.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="description" content="Intersection of a circle and a line"> 
+    <meta name="keywords" content="line lines circle intersection points tangent analytical geometry equations">
+    <title>Intersection of a circle and a line</title>
+    <link href="http://www.ambrsoft.com/Images/amb.ico" rel="shortcut icon">
+    <link href="./Intersection of a circle and a line_files/Geometry.css" rel="stylesheet" type="text/css">
+    <link href="./Intersection of a circle and a line_files/Basic.css" rel="stylesheet" type="text/css">
+    <link href="./Intersection of a circle and a line_files/General.css" rel="stylesheet" type="text/css">
+    <link href="./Intersection of a circle and a line_files/circleLine.css" rel="stylesheet" type="text/css">
+    <link href="./Intersection of a circle and a line_files/calcCom.css" rel="stylesheet" type="text/css">
+    <script src="./Intersection of a circle and a line_files/uconcalc.js.download" type="text/javascript"></script>
+    <script src="./Intersection of a circle and a line_files/circleLine.js.download" type="text/javascript"></script>
+    <script src="./Intersection of a circle and a line_files/clsLine.js.download" type="text/javascript"></script>
+    <script src="./Intersection of a circle and a line_files/mainGeometry.js.download" type="text/javascript"></script>
+    <script src="./Intersection of a circle and a line_files/mainCom.js.download" type="text/javascript"></script>
+</head>
+<body>
+<form id="circleLine" name="circleLine" action="http://www.ambrsoft.com/TrigoCalc/Circles2/Circle2.htm">
+<div style="text-align:center;">
+    <table border="0" cellspacing="0" style="font:normal 17px cambria;font-style:italic;margin:0 auto;"><tbody><tr><td>
+        <div class="divStyle" id="mastreHeadImage" style="padding-left:2px;"><img style="width: 1158px; cursor: pointer;" src="./Intersection of a circle and a line_files/headdev05a.png" alt="Home page" title="Home page" onclick="window.open(&#39;/default.aspx&#39;,&#39;_top&#39;)" onmousemove="this.style.cursor = &#39;pointer&#39;;this.style.cursor = &#39;hand&#39;;"></div>
+        <div class="divStyle" id="mastreHeadMenu"><table style="width:1162px;font:normal 13px arial; background-image:url(" images="" backgrounds="" bc7a.png');background-repeat:repeat-x;'=""><tbody><tr><td class="menuBarTab" style="width:100px;"></td><td class="menuBarTab" style="width:50px; background-image:none;background-color:#999999;" onmouseover="style.cursor=&#39;pointer&#39;;style.cursor=&#39;hand&#39;;style.color=&#39;white&#39;" onmouseout="this.style.backgroundColor=&#39;#999999&#39;; style.color=&#39;black&#39;" onclick="window.open(&#39;/default.aspx&#39;,&#39;_top&#39;)">Home</td><td class="menuBarTab" style="width:130px;" onmouseover="style.cursor=&#39;pointer&#39;;style.cursor=&#39;hand&#39;;style.backgroundImage=&#39;none&#39;;style.backgroundColor=&#39;#0af5f5&#39;" onmouseout="this.style.backgroundImage=&#39;url(/Images/BackGrounds/bc7a.png)&#39;" onclick="window.open(&#39;/UnitsConverterCalc/length.htm&#39;,&#39;_top&#39;)">Units Conversion</td><td class="menuBarTab" style="width: 60px; cursor: pointer; background-image: url(&quot;/Images/BackGrounds/bc7a.png&quot;); background-color: rgb(228, 227, 100);" onmouseover="style.cursor=&#39;pointer&#39;;style.cursor=&#39;hand&#39;; style.backgroundImage=&#39;none&#39;; style.backgroundColor=&#39;#e4e364&#39;" onmouseout="this.style.backgroundImage=&#39;url(/Images/BackGrounds/bc7a.png)&#39;" onclick="window.open(&#39;/MathCalc/menuMath/menu.htm&#39;,&#39;_top&#39;)">Math</td><td class="menuBarTab" style="width:80px;" onmouseover="style.cursor=&#39;pointer&#39;;style.cursor=&#39;hand&#39;; style.backgroundImage=&#39;none&#39;; style.backgroundColor=&#39;#d4f344&#39;" onmouseout="this.style.backgroundImage=&#39;url(/Images/BackGrounds/bc7a.png)&#39;" onclick="window.open(&#39;/CalcPhysics/FreeFall/FreeFall.htm&#39;,&#39;_top&#39;)">Physics</td><td class="menuBarTab" style="width:140px;" onmouseover="style.cursor=&#39;pointer&#39;;style.cursor=&#39;hand&#39;; style.backgroundImage=&#39;none&#39;; style.backgroundColor=&#39;#ffa1e6&#39;" onmouseout="this.style.backgroundImage=&#39;url(/Images/BackGrounds/bc7a.png)&#39;" onclick="window.open(&#39;/CalcElectric/OhmsLaw/OhmsLaw_.htm&#39;,&#39;_top&#39;)">Electric Calculators</td><td class="menuBarTab" style="width:120px;" onmouseover="style.cursor=&#39;pointer&#39;;style.cursor=&#39;hand&#39;;style.backgroundImage=&#39;none&#39;;style.backgroundColor=&#39;#db9cf5&#39;" onmouseout="this.style.backgroundImage=&#39;url(/Images/BackGrounds/bc7a.png)&#39;" onclick="window.open(&#39;/Equations/Examples/AnalyticGeometry/AnalyticGeometry.htm&#39;,&#39;_top&#39;)">Solved Problems</td><td class="menuBarTab" style="width: 80px; cursor: pointer; background-image: url(&quot;/Images/BackGrounds/bc7a.png&quot;); background-color: rgb(212, 243, 68);" onmouseover="style.cursor=&#39;pointer&#39;;style.cursor=&#39;hand&#39;;style.backgroundImage=&#39;none&#39;;style.backgroundColor=&#39;#d4f344&#39;" onmouseout="this.style.backgroundImage=&#39;url(/Images/BackGrounds/bc7a.png)&#39;" onclick="window.open(&#39;/Equations/Trigonometry/Trigonometry.htm&#39;,&#39;_top&#39;)">Equations</td><td class="menuBarTab"><img src="./Intersection of a circle and a line_files/email3.PNG" id="reportImg" alt="" style="margin-left:11px;height:16px;cursor:pointer;" onclick="window.open(&quot;/Comments/sendError.aspx&quot;,&quot;&quot;, &quot;width=550,height=580,top=200,left=493&quot;)"></td></tr></tbody></table></div>
+        <div class="divStyle">
+            <table id="tabs" style="margin:0 auto;">
+                <tbody><tr>
+                    <td class="menuLeft"><div id="mastreMenu"><div><div id="analm0" style="text-align:left;padding-left:8px;height:20px;padding-top:4px;font:bold 13px arial;background-color:#c2d9d0;" onmouseover="this.style.cursor=&quot;pointer&quot;;this.style.backgroundColor=&quot;d8f477&quot;" onmouseout="this.style.backgroundColor=&quot;c2d9d0&quot;" onclick="window.open(&#39;/TrigoCalc/menu/menuTrigoCalc.htm&#39;,&#39;_top&#39;)">Geometry menu</div><div id="analm0" style="text-align:left;padding-left:8px;height:20px;padding-top:4px;font:normal 13px arial;background-color:#d2e9d0;border-top:solid 1px #999999;" onmouseover="this.style.cursor=&quot;pointer&quot;;this.style.backgroundColor=&quot;d8f477&quot;" onmouseout="this.style.backgroundColor=&quot;d2e9d0&quot;" onclick="window.open(&#39;/TrigoCalc/Circles2/CircleBasic/BasicLaws.htm&#39;,&#39;_top&#39;)">Circles basic laws</div><div id="analm0" style="text-align:left;padding-left:8px;height:20px;padding-top:4px;font:normal 13px arial;background-color:#d2e9d0;border-top:solid 1px #999999;" onmouseover="this.style.cursor=&quot;pointer&quot;;this.style.backgroundColor=&quot;d8f477&quot;" onmouseout="this.style.backgroundColor=&quot;d2e9d0&quot;" onclick="window.open(&#39;/TrigoCalc/Triangle/BasicLaw/BasicTriangle.htm&#39;,&#39;_top&#39;)">Triangle basic laws</div><div id="analm0" style="text-align:left;padding-left:8px;height:20px;padding-top:4px;font:normal 13px arial;background-color:#d2e9d0;border-top:solid 1px #999999;" onmouseover="this.style.cursor=&quot;pointer&quot;;this.style.backgroundColor=&quot;d8f477&quot;" onmouseout="this.style.backgroundColor=&quot;d2e9d0&quot;" onclick="window.open(&#39;/TrigoCalc/Trigonometry/data.htm&#39;,&#39;_top&#39;)">Trigonometry</div><div class="geometryMenu">Analytic 2D Calculators</div><div id="anal0" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/MathCalc/Line/Line_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Line geometry</div><div id="anal1" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Circles2/circle/geometry.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Circle equation</div><div id="anal2" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Circle3D.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Circle defined by 3 points</div><div id="anal3" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Circles2/circle2intersection/CircleCircleIntersection.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Circles common area</div><div id="anal4" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/MathCalc/Line/Line_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Distance of a point to line</div><div id="anal5" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Circles2/circle2intersection/CircleCircleIntersection.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Intersection of 2 circles</div><div id="anal6" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Sphere/TwoSpheres/Intersection.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Intersection of 2 spheres</div><div id="anal7" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Circles3/Intersection.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Intersection of 3 circles</div><div id="anal8" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/MathCalc/Line/TwoLinesIntersection/TwoLinesIntersection.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Intersection of two lines</div><div id="anal9" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Circles2/circlrLine_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Intersection of circle and line</div><div id="anal10" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Circles2/Ellipse/EllipseLine.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Intersection ellipse and line</div><div id="anal11" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/MathCalc/Line/ParallelLines/parallelLines1.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Parallel Lines</div><div id="anal12" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/MathCalc/Line/InclinedLines/Inclined.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Inclined Lines</div><div id="anal13" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/PointsInOut/PointInOut_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Point inside triangle or circle</div><div id="anal14" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Circles2/CirclePoint/CirclePointDistance.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Tangent line to circle</div><div id="anal15" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Circles2/Circles2Tangent_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Tangent lines between 2 circles</div><div id="anal16" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Triangles/3lines/doc.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Triangle defined by 3 lines</div><div id="anal17" class="geometryMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Triangles/3Points.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Triangle defined by 3 points</div><div class="geometryMenu">Analytical 3D Geometry</div><div id="anal18" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Line3D/Line3D_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Line 3D geometry</div><div id="anal19" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Line3D/LineColinear.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Collinear points</div><div id="anal20" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Plan3D/PointsCoplanar.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Coplanar points</div><div id="anal21" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Line3D/Distance2Lines3D_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Distance between 2 lines</div><div id="anal22" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Plan3D/Plane3D_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Distance of a point to plane</div><div id="anal23" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Plan3D/Plane3D_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Intersection of 2 planes</div><div id="anal24" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Plan3D/3PlanesIntersection_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Intersection of 3 planes</div><div id="anal25" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Plan3D/PlaneLineIntersection_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Intersection of plane and line</div><div id="anal26" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Sphere/SpherePlaneIntersection_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Intersection of plane and sphere</div><div id="anal27" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Sphere/SpherLineIntersection_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Intersection of line and sphere</div><div id="anal28" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Plan3D/Plane3D_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Plane defined by 3 points</div><div id="anal29" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Sphere/Spher3D_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Sphere defined by 4 points</div><div class="geometryMenu">Geometry</div><div id="anal30" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Sphere/Arc_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Arc and circle</div><div id="anal31" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Circles2/CircleTrack/CircleTrack.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Circular track</div><div id="anal32" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Circles2/Ellipse/Ellipse.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Ellipse</div><div id="anal33" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Quadrilateral/Shape1.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Irregular Quadrilateral</div><div id="anal34" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Parallelogram/Trapezoid/Rhombus_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Parallelogram</div><div id="anal35" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Polygon_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Polygons</div><div id="anal36" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Cone_.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Pyramid and cone</div><div id="anal37" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Sphere/Cap/SphereCap.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Spherical Cap-Sector-Segment</div><div id="anal38" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Circles3/Tangency/Tangent.htm&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Three tangent circles</div><div id="anal39" class="physicsMenuOption" style="border-left-color:#C0D1CA" onclick="window.open(&#39;/TrigoCalc/Triangle/triangle.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Triangle</div><div class="solvedMenu">Solved Problems</div><div id="enal0" class="solvedMenuOption" style="border-left-color:#bcdeff" onclick="window.open(&#39;/Equations/Examples/AnalyticGeometry/AnalyticGeometry.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Analytical geometry</div><div id="enal1" class="solvedMenuOption" style="border-left-color:#bcdeff" onclick="window.open(&#39;/Equations/Examples/Geometry/Geometry.htm&#39;,&#39;_top&#39;)" onmouseover="lin(this.id);" onmouseout="unlin(this.id);">Plane geometry</div></div></div></td>
+                    <td class="innerTable">
+
+                        <div class="geometryHeader">Intersection of circle and a line</div>
+                        <div style="height:8px;"></div>    
+
+                        <table style="width:762px;text-align:center;border:1px solid #a5a5a5;background-color:#cdcdcf;font:normal 18px cambria math,tahoma;margin:0 auto;">
+                            <tbody><tr>
+                                <td colspan="2" style="background-color:#9a9a9a;font:bold 16px cambria math,Tahoma;text-align:center;padding-top:3px;color:#135577;">Line</td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:14px;text-align:left;padding-left:6px;">Line form:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y = mx + b</td>
+                                <td style="text-align:left;padding-left:20px;">
+                                    y = <input id="f0" class="inputtxt" type="text" onkeyup="calcLC(this.form.id,this.id,this.value);" onkeypress="keyPress(event, this.id)" style="background-color: rgb(255, 255, 255);"> x + 
+                                    <input id="f1" class="inputtxt" type="text" onkeyup="calcLC(this.form.id,this.id,this.value);" onkeypress="keyPress(event, this.id)" style="background-color: rgb(255, 255, 255);"> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:14px;text-align:left;padding-left:6px;">Line form:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ax + By + C =0</td>
+                                <td style="text-align:left;padding-left:20px;">
+                                    <input id="f2" class="inputtxt" type="text" onkeyup="calcLC(this.form.id,this.id,this.value);" onkeypress="keyPress(event, this.id)" style="background-color: rgb(255, 255, 255);"> x + 
+                                    <input id="f3" class="inputtxt" type="text" onkeyup="calcLC(this.form.id,this.id,this.value);" onkeypress="keyPress(event, this.id)" style="background-color: rgb(255, 255, 255);"> y +
+                                    <input id="f4" class="inputtxt" type="text" onkeyup="calcLC(this.form.id,this.id,this.value);" onkeypress="keyPress(event, this.id)" style="background-color: rgb(255, 255, 255);"> = 0
+                                </td>
+                            </tr>
+                        </tbody></table>
+
+                        <div style="height:10px;"></div>
+                        <table style="width:762px;text-align:center;border:1px solid #a5a5a5;background-color:#cdcdcf;font:normal 18px cambria math,tahoma;margin:0 auto;">
+                            <tbody><tr>
+                                <td colspan="2" style="background-color:#9a9a9a;font:bold 16px cambria math,Tahoma;text-align:center;padding-top:3px;color:#135577;">Circle</td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:14px;text-align:left;padding-left:6px;">Circle form:&nbsp;&nbsp;(x-a)<sup>2</sup> + (y-b)<sup>2</sup> = r<sup>2</sup></td>
+                                <td style="text-align:left;padding-left:14px;">
+                                    ( x - <input id="f5" class="inputtxt" type="text" onkeyup="calcLC(this.form.id,this.id,this.value);" onkeypress="keyPress(event, this.id)" style="background-color: rgb(255, 255, 255);"> )<sup>2</sup> + ( y -
+                                    <input id="f6" class="inputtxt" type="text" onkeyup="calcLC(this.form.id,this.id,this.value);" onkeypress="keyPress(event, this.id)" style="background-color: rgb(255, 255, 255);"> )<sup>2</sup> =
+                                    <input id="f7" class="inputtxt" type="text" onkeyup="calcLC(this.form.id,this.id,this.value);" onkeypress="keyPress(event, this.id)" style="background-color: rgb(255, 255, 255);"><sup>2</sup>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:14px;text-align:left;padding-left:6px;">Circle form:&nbsp;&nbsp;x<sup>2</sup> + y<sup>2</sup> + Ax + By + C</td>
+                                <td style="text-align:left;padding-left:14px;">
+                                    x<sup>2</sup> + y<sup>2</sup> + <input id="f8" class="inputtxt" type="text" onkeyup="calcLC(this.form.id,this.id,this.value);" onkeypress="keyPress(event, this.id)" onfocus="getFocus(this.id,event)" style="background-color: rgb(255, 255, 255);"> x +
+                                    <input id="f9" class="inputtxt" type="text" onkeyup="calcLC(this.form.id,this.id,this.value);" onkeypress="keyPress(event, this.id)" onfocus="getFocus(this.id,event)" style="background-color: rgb(255, 255, 255);"> y +
+                                    <input id="f10" class="inputtxt" type="text" onkeyup="calcLC(this.form.id,this.id,this.value);" onkeypress="keyPress(event, this.id)" onfocus="getFocus(this.id,event)" style="background-color: rgb(255, 255, 255);"> = 0
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        
+                        <div style="height:6px;"></div>
+
+                        <table style="margin:0 auto;">
+                            <tbody><tr>
+                                <td class="td0">Intersection coordinates (x , y):</td>
+                                <td><input id="a0" class="res2" type="text" readonly="readonly"></td>
+                            </tr>
+                            <tr>
+                                <td class="td0">Intersection coordinates (x , y):</td>
+                                <td><input id="a1" class="res2" type="text" readonly="readonly"></td>
+                            </tr>
+                            <tr>
+                                <td class="td0">Distance between intersection points:</td>
+                                <td><input id="a2" class="res2" type="text" readonly="readonly"></td>
+                            </tr>    
+                            <tr>
+                                <td class="td0">Distance of the line from circle center:</td>
+                                <td><input id="a3" class="res2" type="text" readonly="readonly"></td>
+                            </tr>    
+                        </tbody></table>
+
+                        <div style="margin-top:12px;font:normal 13px arial;">
+                        <table style="margin:0 auto;">
+                            <tbody><tr>
+                                <td>
+                                    <input id="Button1" type="button" value="-0.0" onclick="incThis(-1)" style="width:55px;">
+                                    <input id="Button2" type="button" value="+0.00" onclick="incThis(1)" style="width:55px;margin-right:20px;">
+                                    <input id="Button3" type="button" value="Clear Line" style="color:#004182;" onclick="clearThis(1)">
+                                    <input id="Button4" type="button" value="Clear Circle" style="color:#004182;margin-right:30px;" onclick="clearThis(2)">
+                                    <input id="Button5" type="button" value="Example" onclick="example(1)">
+                                    <input id="Button6" type="button" value="Example" onclick="example(2)">
+                                    <input id="Button7" type="button" value="Example" onclick="example(3)">
+                                    <input id="Button8" type="button" value="Example" onclick="example(4)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input id="err" type="text" style="color: red; font: 14px verdana, tahoma; margin-left: 30px; border: 0px; visibility: hidden;" value="ERROR: Both circles do not Intersects."></td>
+                            </tr>
+                        </tbody></table>
+
+                       </div>
+                       <table style="width:650px;margin:0 auto;">
+                            <tbody><tr>
+                                <td><a class="xtag" href="http://www.ambrsoft.com/MathCalc/Line/Line_.htm" target="_blank">Line equations summary</a></td>
+                                <td><a class="xtag" href="http://www.ambrsoft.com/TrigoCalc/Circles2/circle/geometry.htm" target="_blank">Circle equations summary</a></td>
+                            </tr> 
+                       </tbody></table>
+
+                        <div style="height:5px;"></div>
+                        <a name="twoCirclesIntersection"></a>
+                        <div id="twoCirclesIntersectionp">
+                        <table class="tblFormat" border="1" cellspacing="0" style="font:normal 17px cambria;font-style:italic;margin:0 auto;">
+                            <tbody><tr>
+                                <td colspan="2" class="headers" style="background-color:#a4b5a0;text-align:right;padding:0;padding-bottom:1px;padding-right:8px;">
+                                    <table style="width:100%;margin:0 auto;">
+                                        <tbody><tr>
+                                            <td style="text-align:center;color:Black;"><b>Intersection of circle and a line</b></td>
+                                            <td style="width:35px;"><img src="./Intersection of a circle and a line_files/print3.png" alt="Print content" style="height:24px;" onclick="printingDiv(&#39;twoCirclesIntersectionp&#39;)" onmouseover="style.cursor=&#39;pointer&#39;"></td>
+                                            <td style="width:40px;text-align:right;padding-right:0;">
+                                                <a href="http://www.ambrsoft.com/TrigoCalc/Circles2/circlrLine_.htm#top" class="gotop" style="color:#748470;font:bold 22px arial;" title="Go to top">▲</a>
+                                            </td>      
+                                        </tr>
+                                    </tbody></table>
+                                </td> 
+                            </tr> 
+                            <tr>
+                                <td style="text-align:left;padding:8px;vertical-align:top;padding-top:12px;width:245px;">
+                                    <div style="font:bold 15px cambria">Intersection points (x<sub class="sb">1</sub> , y<sub class="sb">1</sub>) and<br> (x<sub class="sb">2</sub> , y<sub class="sb">2</sub>) 
+                                     of a circle and a line of the form: &nbsp;&nbsp;&nbsp;&nbsp; <span style="font:bold 15px cambria;font-style:italic;">y = mx + d</span>
+                                    </div>
+                                    <div style="text-align:center;padding-top:22px;padding-bottom:35px;"><img src="./Intersection of a circle and a line_files/circleLineIntersection.png" alt="Circle line intersection"></div>
+                                    <div><b>Example:</b> Find intersection points of circle: &nbsp; (x − 3)<sup class="sb">2</sup> + (y + 5)<sup class="sb">2</sup> = 9</div>
+                                    <div>and the <a class="xtag" href="http://www.ambrsoft.com/MathCalc/Line/Line_.htm" target="_blank" style="font:normal 15px cambria;font-style:italic;">line</a>: &nbsp;&nbsp;&nbsp; y = −x + 1</div>
+                                    <div style="height:10px;"></div>
+                                    <div><b>Solution:</b> In our case</div>
+                                    <div>m = − 1 &nbsp; d = 1 &nbsp;&nbsp; a = 3 &nbsp; b = − 5 &nbsp; r = 3</div>
+                                    <div>Calculate ∂ = 9 so the line intersects the circle at the points:</div>
+                                    <div style="text-align:center;">x<sub class="sb">1,2</sub> = 6, 3 &nbsp;&nbsp; and &nbsp;&nbsp; y<sub class="sb">1,2</sub> = -5, -2</div>
+                                    <div>And the intersection points are<br>(6, -5) and (3, -2)</div>
+                                    <div style="padding-top:8px;"><b>Correctness check:</b></div>
+                                     <table>
+                                        <tbody><tr>
+                                            <td style="width:80px;">For circle:</td>
+                                            <td>(6 - 3)<sup class="sb">2</sup> + (-5 + 5)<sup class="sb">2</sup> = 9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For line:</td>
+                                            <td>-5 = -6 + 1 = -5</td>
+                                        </tr>
+                                    </tbody></table>
+                                    <hr>    
+                                    <div><b>Example:</b> Find intersection points of circle: &nbsp; x<sup class="sb">2</sup> + y<sup class="sb">2</sup> + 3x + 4y + 2 = 0</div>
+                                    <div>and the line: &nbsp;&nbsp;&nbsp; x − 2y − 6 = 0</div>
+                                    <div style="height:10px;"></div>
+                                    <div><b>Solution:</b> In this case</div>
+                                    <div>m = 0.5 &nbsp; d = -3 &nbsp;&nbsp; A = 3 &nbsp; B = 4 &nbsp; C = 2</div>
+                                    <div>Calculate &nbsp; <b>x</b> &nbsp; points:</div>
+                                    <div class="spc3">∂ = 9 &nbsp;&nbsp;&nbsp;&nbsp; x<sub class="sb">1,2</sub> = 0.4, -2</div>
+                                    <div>Calculate &nbsp; y &nbsp; points:</div>
+                                    <div class="spc3">∂ = 2.25 &nbsp;&nbsp;&nbsp; x<sub class="sb">1,2</sub> = -2.8, -4</div>
+                                </td>
+                                <td style="vertical-align:top;">
+                                    <table style="background-color:#d9d9d9;border:1px solid #999999;width:495px;height:40px;">
+                                        <tbody><tr>
+                                            <td style="text-align:left;padding-left:36px;width:140px;">Line form:</td>
+                                            <td style="font:bold 19px cambria;font-style:italic;text-align:left;padding-left:30px;">y = m x + d</td>
+                                        </tr>
+                                    </tbody></table> 
+                                    <table style="background-color:#d9d9d9;border:1px solid #999999;width:495px;height:40px;">
+                                        <tbody><tr>
+                                            <td style="text-align:left;padding-left:36px;width:140px;">Circle form:</td>
+                                            <td style="font:bold 19px cambria;font-style:italic;text-align:left;padding-bottom:6px;">(x − a)<sup>2</sup> + (y − b)<sup>2</sup> = r <sup>2</sup></td>
+                                        </tr>
+                                    </tbody></table>
+                                    <div class="img1"><img src="./Intersection of a circle and a line_files/eq2a.png" alt="distance circles centers"></div>
+                                    <div class="img1"><img src="./Intersection of a circle and a line_files/eq2b.png" alt="distance circles centers"></div>
+                                    <div class="img"><img src="./Intersection of a circle and a line_files/eq2.png" alt="distance circles centers"></div>
+                                    <table style="background-color:#d9d9d9;border:1px solid #999999;width:495px;height:40px;">
+                                        <tbody><tr>
+                                            <td style="text-align:left;padding-left:36px;width:140px;">Circle form:</td>
+                                            <td style="font:bold 19px cambria;font-style:italic;text-align:left;padding-bottom:6px;">x<sup>2</sup> + y<sup>2</sup> + A x + B y + C = 0</td>
+                                        </tr>
+                                    </tbody></table>
+                                    <div class="img1"><img src="./Intersection of a circle and a line_files/eq3a.png" alt=""></div>
+                                    <div class="img"><img src="./Intersection of a circle and a line_files/eq3.png" alt="x points"></div>
+                                    <hr style="color:#e0e0f0;height:1px;">
+                                    <div class="img1"><img src="./Intersection of a circle and a line_files/eq3c.png" alt=""></div>
+                                    <div class="img"><img src="./Intersection of a circle and a line_files/eq3b.png" alt="y points"></div>
+                                    <hr style="color:#e0e0f0;height:1px;">
+                                    <table>
+                                        <tbody><tr>
+                                            <td style="width:70px;text-align:left;">If &nbsp; ∂ &gt; 0</td>
+                                            <td style="text-align:left;">then two intersection points exists</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:70px;text-align:left;">If &nbsp; ∂ = 0</td>
+                                            <td style="text-align:left;">then the line is tangent to the circle</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">If &nbsp; ∂ &lt; 0</td>
+                                            <td style="text-align:left;">then the line do not intersects the circle</td>
+                                        </tr>
+                                    </tbody></table>
+                                    <hr style="color:#e0e0f0;height:1px;">
+                                    <table>
+                                        <tbody><tr>
+                                            <td class="spc">
+                                                <div><b>Note:</b> Because during the solution we get two values for x coordinate and two values for y coordinate,
+                                                     it is important to match the correct values for x and y. there can be 4 possible sets of points (red points) 
+                                                     but there are only two correct intersection points (green points) in order to match the correct points we can 
+                                                     substitute the points x and y into the circle and line equation and see which of them are satisfying the  
+                                                     equations.
+                                                </div>
+                                                
+                                            </td>
+                                            <td><img src="./Intersection of a circle and a line_files/checkPoints.png" alt="Check points on the circle"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>(x<sub class="sb">1,2</sub> − a)<sup class="sb">2</sup> + (y<sub class="sb">1,2</sub>  − b)<sup class="sb">2</sup> = r<sup class="sb">2</sup></td>
+                                            <td style="text-align:left;">y<sub class="sb">1,2</sub> = m x<sub class="sb">1,2</sub> + d</td>
+                                        </tr>
+                                    </tbody></table>                                
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        </div>
+
+
+                        <div style="height:10px;"></div>
+                        <a name="lineCircleTangent"></a>
+                        <div id="lineCircleTangentp">
+                        <table class="tblFormat" border="1" cellspacing="0" style="font:normal 17px cambria;font-style:italic;margin:0 auto;">
+                            <tbody><tr>
+                                <td colspan="2" class="headers" style="background-color:#a4b5a0;text-align:right;padding:0;padding-bottom:1px;padding-right:8px;">
+                                    <table style="width:100%;margin:0 auto;">
+                                        <tbody><tr>
+                                            <td style="text-align:center;color:Black;"><b>Line tangent to circle</b></td>
+                                            <td style="width:35px;"><img src="./Intersection of a circle and a line_files/print3.png" alt="Print content" style="height:24px;" onclick="printingDiv(&#39;lineCircleTangentp&#39;)" onmouseover="style.cursor=&#39;pointer&#39;"></td>
+                                            <td style="width:40px;text-align:right;padding-right:0;">
+                                                <a href="http://www.ambrsoft.com/TrigoCalc/Circles2/circlrLine_.htm#top" class="gotop" style="color:#748470;font:bold 22px arial;" title="Go to top">▲</a>
+                                            </td>      
+                                        </tr>
+                                    </tbody></table>
+                                </td> 
+                            </tr> 
+                            <tr>
+                                <td style="text-align:left;padding:8px;vertical-align:top;padding-top:12px;width:245px;">
+                                    <div style="font:bold 15px cambria">Intersection of a line tangent to the circle at point (x<sub class="sb">t</sub> , y<sub class="sb">t</sub>) 
+                                    and a line of the form: &nbsp; <span style="font:bold 15px cambria;font-style:italic;">y = mx + d</span>
+                                    </div>
+                                    <div style="text-align:center;padding-top:22px;padding-bottom:35px;"><img src="./Intersection of a circle and a line_files/circleLineTangent.png" alt="Tangent circle"></div>
+                                    <div><b>Example:</b> Find the tangent line equation at point (1 , 2) to the circle: x<sup class="sb">2</sup> + y<sup class="sb">2</sup> + 2x + 3y − 13 = 0</div>
+                                    <div class="img"><img src="./Intersection of a circle and a line_files/eq6.png" alt="Slop m"></div>
+                                    <div class="img3"><img src="./Intersection of a circle and a line_files/eq6a.png" alt="Line equation"></div>
+                                    <div class="spc">And the tangent line equation is:</div>
+                                    <div class="img3">7y = -4x + 18</div>
+                                </td>
+                                <td style="vertical-align:top;">
+                                    <table style="background-color:#d9d9d9;border:1px solid #999999;width:495px;height:40px;">
+                                        <tbody><tr>
+                                            <td style="text-align:left;padding-left:36px;width:140px;">Line form:</td>
+                                            <td style="font:bold 19px cambria;font-style:italic;text-align:left;padding-left:30px;">y = m x + d</td>
+                                        </tr>
+                                    </tbody></table> 
+                                    <table style="background-color:#d9d9d9;border:1px solid #999999;width:495px;height:40px;">
+                                        <tbody><tr>
+                                            <td style="text-align:left;padding-left:36px;">Circle form:</td>
+                                            <td style="font:bold 19px cambria;font-style:italic;text-align:left;padding-bottom:6px;">(x − a)<sup>2</sup> + (y − b)<sup>2</sup> = r <sup>2</sup></td>
+                                        </tr>
+                                    </tbody></table>
+                                    <div class="spc">
+                                    <table>
+                                        <tbody><tr>
+                                            <td style="width:200px;">Tangent line slope:</td>
+                                            <td><img src="./Intersection of a circle and a line_files/eq4.png" alt="Tangent line slop"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tangent line equation:</td>
+                                            <td><img src="./Intersection of a circle and a line_files/eq4a.png" alt="Tangent line equation"></td>
+                                        </tr>
+                                    </tbody></table>
+                                    </div>
+                                    <div class="spc">Provided that b ≠ y<sub>t</sub></div>
+                                    <div class="spc">If &nbsp; b = y<sub>t</sub> &nbsp;&nbsp; then the line equation become: &nbsp;&nbsp;&nbsp;&nbsp; x = x<sub>t</sub></div>
+                                    <table style="background-color:#d9d9d9;border:1px solid #999999;width:495px;height:40px;">
+                                        <tbody><tr>
+                                            <td style="text-align:left;padding-left:36px;width:140px;">Circle form:</td>
+                                            <td style="font:bold 19px cambria;font-style:italic;text-align:left;padding-bottom:6px;">x<sup>2</sup> + y<sup>2</sup> + A x + B y + C = 0</td>
+                                        </tr>
+                                    </tbody></table>
+                                    <div class="spc">x<sub>t</sub> , y<sub>t</sub> &nbsp; should be a point on the circle therefore:</div>
+                                    <div class="img"><img src="./Intersection of a circle and a line_files/eq5.png" alt="Circle equation at tangent point"></div>           
+                                    <div class="spc">
+                                    <table>
+                                        <tbody><tr>
+                                            <td style="width:200px;">Tangent line slope:</td>
+                                            <td><img src="./Intersection of a circle and a line_files/eq5a.png" alt="Tangent line slop"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tangent line equation:</td>
+                                            <td><img src="./Intersection of a circle and a line_files/eq5b.png" alt="Tangent line equation"></td>
+                                        </tr>
+                                    </tbody></table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>                           
+                        </div>
+                    </td>
+                    <td class="divColAd">
+                        <div style="width:180px;">
+                        <div>
+                            <script async="" src="./Intersection of a circle and a line_files/f.txt"></script>
+                            <!-- ads30 -->
+                            <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-1221926074140654" data-ad-slot="3009282238"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>                        
+                        </div>
+                        <div>
+                            <script async="" src="./Intersection of a circle and a line_files/f.txt"></script>
+                            <!-- ads31 -->
+                            <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-1221926074140654" data-ad-slot="1504628872"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>                        
+                        </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        <div class="divStyle" id="masterFooterDiv"><table style="width:1162px;height:95px;background-color:#c4c9ba;border-top:11px solid #9aa48a;font:normal 12px Tahoma;text-align:center;"><tbody><tr style="vertical-align:middle;"><td style="padding-left:12px;"><div><div style="float:left;background-color:Yellow;font:bold 14px Times New Roman;font-style:italic;">Am</div><div style="float:left;font:bold 14px Times New Roman;font-style:italic; background-color:#008080;">Br</div><div style="float:left;font:normal 14px Times New Roman;font-style:italic;">net</div></div></td><td style="text-align:left;"><i>AmBrSoft &nbsp;&nbsp;11-06-2018</i></td><td style="border:0px solid red;"><a href="http://www.ambrsoft.com/GeneralCalc/Disclaimer.aspx" target="main"><i>Disclaimer</i></a></td><td style="text-align:right;"><a href="http://www.ambrsoft.com/TrigoCalc/Circles2/circlrLine_.htm#top"><img src="./Intersection of a circle and a line_files/top.png" alt="Go to top of the page" style="border:0px;"></a></td><td style="text-align:right;padding-top:4px;padding-right:8px;"><a id="btnSendToFriend" runat="server" onclick="window.open(&#39;/Comments/EmailTo.aspx&#39;,&#39;name_&#39;,&#39; width=450, height=400, left=400, top=200&#39;)" ;=""><img src="./Intersection of a circle and a line_files/sendFriend3.PNG" style="height:12px;" alt="Send a link to this site to a friend" onmouseover="style.cursor=&quot;hand&quot;"></a></td></tr></tbody></table></div>
+    </td></tr></tbody></table>
+</div>
+    <script type="text/javascript">
+        document.getElementById('mastreHeadImage').innerHTML = menuComHeadImage('headdev05a');
+        document.getElementById('mastreHeadMenu').innerHTML = menuComHeadMenuTAB(247);
+        document.getElementById('masterFooterDiv').innerHTML = menuComFooter("11-06-2018");
+        document.getElementById('mastreMenu').innerHTML = GeometryMenuLV1();
+
+        circleLine.err.value = "Circle and Line do not Intersects.";
+        circleLine.err.style.visibility = 'hidden';
+        circleLine.f0.focus();
+    </script>
+</form>
+</body></html>

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+TBB_START_PROG="$(grep '^X-TorBrowser-ExecShell' $1 | tail -1 | sed 's/^X-TorBrowser-ExecShell=//' | sed 's/%.//')"
+
+shift
+
+if [ "$#" -ge 1 ]
+then
+  echo "Launching '${TBB_START_PROG} $@'..."
+else
+  echo "Launching '${TBB_START_PROG}'..."
+fi
+
+${TBB_START_PROG} "$@"

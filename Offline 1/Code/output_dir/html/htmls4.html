@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0054)https://neis-one.org/2017/10/processing-osm-data-java/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+
+	<title>Processing compressed OpenStreetMap Data with Java :  Neis One!</title>
+	
+	<meta name="author" content="Pascal Neis">
+	<meta name="copyright" content="Copyright (c) 2009-2019 Pascal Neis. All Rights Reserved.">
+	<meta name="description" content="Pascal Neis - Neis One!">
+	<meta name="keywords" content="Pascal Neis, Neis One!, OpenStreetMap, OSM, Blog, Neis, Pascal">
+	
+	<link rel="Shortcut Icon" href="http://neis-one.org/favicon.png" type="image/png">
+	
+<!--[if gte IE 7]><!-->
+  <link rel="stylesheet" href="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/style.css" type="text/css" media="screen" charset="utf-8">
+<!-- <![endif]-->
+
+<!--[if IE 7]>
+  <link rel="stylesheet" href="https://neis-one.org/wp-content/themes/manifest_v1.1/style_ie.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" media="screen" href="https://neis-one.org/wp-content/themes/manifest_v1.1/styles_ie6.css" />
+<![endif]-->
+
+  <link rel="alternate" type="application/rss+xml" title="Neis One! RSS Feed" href="https://neis-one.org/feed/">
+  <link rel="alternate" type="application/atom+xml" title="Neis One! Atom Feed" href="https://neis-one.org/feed/atom/">
+  <script type="text/javascript" src="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/jquery-1.3.2.min.js.download" charset="utf-8">
+    
+  </script>
+  <link rel="pingback" href="https://neis-one.org/xmlrpc.php">
+    <link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Neis One! » Processing compressed OpenStreetMap Data with Java Comments Feed" href="https://neis-one.org/2017/10/processing-osm-data-java/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/neis-one.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/style.min.css" type="text/css" media="all">
+<link rel="https://api.w.org/" href="https://neis-one.org/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://neis-one.org/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://neis-one.org/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Review requests of OpenStreetMap contributors  – How you can assist! –" href="https://neis-one.org/2017/09/review-requests-osm/">
+<link rel="next" title="Public profiles on “How did you contribute to OSM?”" href="https://neis-one.org/2017/11/public-profiles-on-hdyc/">
+<meta name="generator" content="WordPress 5.2.2">
+<link rel="canonical" href="https://neis-one.org/2017/10/processing-osm-data-java/">
+<link rel="shortlink" href="https://neis-one.org/?p=1858">
+<link rel="alternate" type="application/json+oembed" href="https://neis-one.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fneis-one.org%2F2017%2F10%2Fprocessing-osm-data-java%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://neis-one.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fneis-one.org%2F2017%2F10%2Fprocessing-osm-data-java%2F&amp;format=xml">
+<!-- Analytics by WP-Statistics v12.6.5 - https://wp-statistics.com/ -->
+<script type="text/javascript" src="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/si_captcha.js.download"></script>
+<!-- begin SI CAPTCHA Anti-Spam - login/register form style -->
+<style type="text/css">
+.si_captcha_small { width:175px; height:45px; padding-top:10px; padding-bottom:10px; }
+.si_captcha_large { width:250px; height:60px; padding-top:10px; padding-bottom:10px; }
+img#si_image_com { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_reg { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_log { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_side_login { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_checkout { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_jetpack { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_bbpress_topic { border-style:none; margin:0; padding-right:5px; float:left; }
+.si_captcha_refresh { border-style:none; margin:0; vertical-align:bottom; }
+div#si_captcha_input { display:block; padding-top:15px; padding-bottom:5px; }
+label#si_captcha_code_label { margin:0; }
+input#si_captcha_code_input { width:65px; }
+p#si_captcha_code_p { clear: left; padding-top:10px; }
+.si-captcha-jetpack-error { color:#DC3232; }
+</style>
+<!-- end SI CAPTCHA Anti-Spam - login/register form style -->
+<link rel="stylesheet" type="text/css" href="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/shCore.css"><link rel="stylesheet" type="text/css" href="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/shThemeEclipse.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="post-template-default single single-post postid-1858 single-format-standard">
+
+
+<div id="siteWrapper">
+
+  <!-- <h1 class="vcard author"><a href="https://neis-one.org/" title="Home" class="fn">Neis One!</a></h1> -->
+
+  <div id="mainNav">
+    <ul>
+      <li class="page_item page-item-404"><a href="https://neis-one.org/">Blog</a></li>
+<li class="page_item page-item-36"><a href="https://neis-one.org/about/">About me</a></li>
+<li class="page_item page-item-1476"><a href="https://twitter.com/pascal_n" target="_blank">@pascal_n</a></li>
+<li class="page_item page-item-332"><a href="https://neis-one.org/overview/">Archive</a></li>
+<li class="page_item page-item-1988"><a href="https://neis-one.org/privacy/">Privacy</a></li>
+    </ul>
+  </div>
+
+      
+  <div id="siteDescription">
+    <!-- by Pascal Neis -->
+  </div>
+
+<div id="coreContent">
+
+	
+
+      <div class="post single hentry">
+        <div class="postContent">
+          <h3 class="entry-title">Processing compressed OpenStreetMap Data with Java</h3>
+          <h4 class="vcard author">by <span class="fn">Pascal Neis - Published: October 9th, 2017</span></h4>
+          <div class="entry-content">
+              <p>This blog post contains a summary on how you can write your own Java classes to process <em><a href="https://osm.org/" target="_blank" rel="noopener">OpenStreetMap</a></em> (OSM) pbf files. PBF is a compression format, which is nowadays more or less the standard utilized for reading and writing OSM data quickly. In the OSM world, many tools and programs implemented this file format (you can find additional information <a href="http://wiki.openstreetmap.org/wiki/PBF_Format" target="_blank" rel="noopener">here</a>). However, I think the following samples for reading and writing such compressed OSM data can be very helpful. In particular, if someone has to create some sort of test data or has to read some specific mapped objects of interest for her/his own project. The well-known Java <a href="http://wiki.openstreetmap.org/wiki/Osmosis" target="_blank" rel="noopener">Osmosis</a> tool (command line application for processing OSM data), provides several libraries that are the basis for this brief tutorial.</p>
+<p><strong>Step 1: Maven is the key</strong> – If your Java project is already managed by <a href="https://maven.apache.org/" target="_blank" rel="noopener">Maven</a>, you can just add the following lines to your pom.xml. It downloads and adds the required jar-files that are needed to process compressed OSM data to your project.</p>
+<div><div id="highlighter_73263" class="syntaxhighlighter  xml"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xml plain">&lt;</code><code class="xml keyword">dependency</code><code class="xml plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">groupId</code><code class="xml plain">&gt;org.openstreetmap.osmosis&lt;/</code><code class="xml keyword">groupId</code><code class="xml plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">artifactId</code><code class="xml plain">&gt;osmosis-pbf&lt;/</code><code class="xml keyword">artifactId</code><code class="xml plain">&gt;</code></div><div class="line number4 index3 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">version</code><code class="xml plain">&gt;0.46&lt;/</code><code class="xml keyword">version</code><code class="xml plain">&gt;</code></div><div class="line number5 index4 alt2"><code class="xml plain">&lt;/</code><code class="xml keyword">dependency</code><code class="xml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+<p>If you don’t use Maven, you can download the aforementioned dependencies <a href="https://mvnrepository.com/artifact/org.openstreetmap.osmosis/osmosis-pbf/0.46" target="_blank" rel="noopener">here</a> and add the jars as described <a href="http://www.tutorialspoint.com/eclipse/eclipse_java_build_path.htm" target="_blank" rel="noopener">here</a> to your eclipse build path.</p>
+<p><strong>Step 2: Implementing the Sink interface for reading OSM data</strong> – Now, after you added the required libraries to your project, you can create your own class to read compressed OSM data. The following MyOSMReader class is an easy example for that scenario: It reads an OSM pbf files and prints all Ids of ‘ways’ with a ‘highway’ key.</p>
+<div><div id="highlighter_560224" class="syntaxhighlighter  java"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div><div class="line number47 index46 alt2">47</div><div class="line number48 index47 alt1">48</div><div class="line number49 index48 alt2">49</div><div class="line number50 index49 alt1">50</div><div class="line number51 index50 alt2">51</div><div class="line number52 index51 alt1">52</div><div class="line number53 index52 alt2">53</div><div class="line number54 index53 alt1">54</div><div class="line number55 index54 alt2">55</div><div class="line number56 index55 alt1">56</div><div class="line number57 index56 alt2">57</div><div class="line number58 index57 alt1">58</div><div class="line number59 index58 alt2">59</div><div class="line number60 index59 alt1">60</div><div class="line number61 index60 alt2">61</div><div class="line number62 index61 alt1">62</div><div class="line number63 index62 alt2">63</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java keyword">package</code> <code class="java plain">org.neis_one.osm.examples;</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="java keyword">import</code> <code class="java plain">java.io.FileInputStream;</code></div><div class="line number4 index3 alt1"><code class="java keyword">import</code> <code class="java plain">java.io.FileNotFoundException;</code></div><div class="line number5 index4 alt2"><code class="java keyword">import</code> <code class="java plain">java.io.InputStream;</code></div><div class="line number6 index5 alt1"><code class="java keyword">import</code> <code class="java plain">java.util.Map;</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="java keyword">import</code> <code class="java plain">org.openstreetmap.osmosis.core.container.v0_6.EntityContainer;</code></div><div class="line number9 index8 alt2"><code class="java keyword">import</code> <code class="java plain">org.openstreetmap.osmosis.core.container.v0_6.NodeContainer;</code></div><div class="line number10 index9 alt1"><code class="java keyword">import</code> <code class="java plain">org.openstreetmap.osmosis.core.container.v0_6.RelationContainer;</code></div><div class="line number11 index10 alt2"><code class="java keyword">import</code> <code class="java plain">org.openstreetmap.osmosis.core.container.v0_6.WayContainer;</code></div><div class="line number12 index11 alt1"><code class="java keyword">import</code> <code class="java plain">org.openstreetmap.osmosis.core.domain.v0_6.Tag;</code></div><div class="line number13 index12 alt2"><code class="java keyword">import</code> <code class="java plain">org.openstreetmap.osmosis.core.domain.v0_6.Way;</code></div><div class="line number14 index13 alt1"><code class="java keyword">import</code> <code class="java plain">org.openstreetmap.osmosis.core.task.v0_6.Sink;</code></div><div class="line number15 index14 alt2">&nbsp;</div><div class="line number16 index15 alt1"><code class="java keyword">import</code> <code class="java plain">crosby.binary.osmosis.OsmosisReader;</code></div><div class="line number17 index16 alt2">&nbsp;</div><div class="line number18 index17 alt1"><code class="java preprocessor">/**</code></div><div class="line number19 index18 alt2"><code class="java spaces">&nbsp;</code><code class="java preprocessor">* Receives data from the Osmosis pipeline and prints ways which have the</code></div><div class="line number20 index19 alt1"><code class="java spaces">&nbsp;</code><code class="java preprocessor">* 'highway key.</code></div><div class="line number21 index20 alt2"><code class="java spaces">&nbsp;</code><code class="java preprocessor">* </code></div><div class="line number22 index21 alt1"><code class="java spaces">&nbsp;</code><code class="java preprocessor">* @author pa5cal</code></div><div class="line number23 index22 alt2"><code class="java spaces">&nbsp;</code><code class="java preprocessor">*/</code></div><div class="line number24 index23 alt1"><code class="java keyword">public</code> <code class="java keyword">class</code> <code class="java plain">MyOsmReader </code><code class="java keyword">implements</code> <code class="java plain">Sink {</code></div><div class="line number25 index24 alt2">&nbsp;</div><div class="line number26 index25 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number27 index26 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">initialize(Map&lt;String, Object&gt; arg0) {</code></div><div class="line number28 index27 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number29 index28 alt2">&nbsp;</div><div class="line number30 index29 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number31 index30 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">process(EntityContainer entityContainer) {</code></div><div class="line number32 index31 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(entityContainer </code><code class="java keyword">instanceof</code> <code class="java plain">NodeContainer) {</code></div><div class="line number33 index32 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">// Nothing to do here</code></div><div class="line number34 index33 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">else</code> <code class="java keyword">if</code> <code class="java plain">(entityContainer </code><code class="java keyword">instanceof</code> <code class="java plain">WayContainer) {</code></div><div class="line number35 index34 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">Way myWay = ((WayContainer) entityContainer).getEntity();</code></div><div class="line number36 index35 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">for</code> <code class="java plain">(Tag myTag : myWay.getTags()) {</code></div><div class="line number37 index36 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(</code><code class="java string">"highway"</code><code class="java plain">.equalsIgnoreCase(myTag.getKey())) {</code></div><div class="line number38 index37 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">System.out.println(</code><code class="java string">" Woha, it's a highway: "</code> <code class="java plain">+ myWay.getId());</code></div><div class="line number39 index38 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">break</code><code class="java plain">;</code></div><div class="line number40 index39 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number41 index40 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number42 index41 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">else</code> <code class="java keyword">if</code> <code class="java plain">(entityContainer </code><code class="java keyword">instanceof</code> <code class="java plain">RelationContainer) {</code></div><div class="line number43 index42 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">// Nothing to do here</code></div><div class="line number44 index43 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">else</code> <code class="java plain">{</code></div><div class="line number45 index44 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">System.out.println(</code><code class="java string">"Unknown Entity!"</code><code class="java plain">);</code></div><div class="line number46 index45 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number47 index46 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number48 index47 alt1">&nbsp;</div><div class="line number49 index48 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number50 index49 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">complete() {</code></div><div class="line number51 index50 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number52 index51 alt1">&nbsp;</div><div class="line number53 index52 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number54 index53 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">close() {</code></div><div class="line number55 index54 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number56 index55 alt1">&nbsp;</div><div class="line number57 index56 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main(String[] args) </code><code class="java keyword">throws</code> <code class="java plain">FileNotFoundException {</code></div><div class="line number58 index57 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">InputStream inputStream = </code><code class="java keyword">new</code> <code class="java plain">FileInputStream(</code><code class="java string">"/Path/To/Your/read.osm.pbf"</code><code class="java plain">);</code></div><div class="line number59 index58 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">OsmosisReader reader = </code><code class="java keyword">new</code> <code class="java plain">OsmosisReader(inputStream);</code></div><div class="line number60 index59 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">reader.setSink(</code><code class="java keyword">new</code> <code class="java plain">MyOsmReader());</code></div><div class="line number61 index60 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">reader.run();</code></div><div class="line number62 index61 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number63 index62 alt2"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p><strong>Step 3: Implementing the Source Interface for writing OSM data</strong> – Similarly to Step 1 to read an OSM file, you will have to implement again an interface to write data as well. This time the Osmosis core task Source interface is being utilized. The following example class writes 10 Nodes to a new OSM pbf file.</p>
+<div><div id="highlighter_824132" class="syntaxhighlighter  java"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div><div class="line number47 index46 alt2">47</div><div class="line number48 index47 alt1">48</div><div class="line number49 index48 alt2">49</div><div class="line number50 index49 alt1">50</div><div class="line number51 index50 alt2">51</div><div class="line number52 index51 alt1">52</div><div class="line number53 index52 alt2">53</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java keyword">package</code> <code class="java plain">org.neis_one.osm.examples;</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="java keyword">import</code> <code class="java plain">java.io.FileNotFoundException;</code></div><div class="line number4 index3 alt1"><code class="java keyword">import</code> <code class="java plain">java.io.FileOutputStream;</code></div><div class="line number5 index4 alt2"><code class="java keyword">import</code> <code class="java plain">java.io.OutputStream;</code></div><div class="line number6 index5 alt1"><code class="java keyword">import</code> <code class="java plain">java.util.Date;</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="java keyword">import</code> <code class="java plain">org.openstreetmap.osmosis.core.container.v0_6.NodeContainer;</code></div><div class="line number9 index8 alt2"><code class="java keyword">import</code> <code class="java plain">org.openstreetmap.osmosis.core.domain.v0_6.CommonEntityData;</code></div><div class="line number10 index9 alt1"><code class="java keyword">import</code> <code class="java plain">org.openstreetmap.osmosis.core.domain.v0_6.Node;</code></div><div class="line number11 index10 alt2"><code class="java keyword">import</code> <code class="java plain">org.openstreetmap.osmosis.core.domain.v0_6.OsmUser;</code></div><div class="line number12 index11 alt1"><code class="java keyword">import</code> <code class="java plain">org.openstreetmap.osmosis.core.task.v0_6.Sink;</code></div><div class="line number13 index12 alt2"><code class="java keyword">import</code> <code class="java plain">org.openstreetmap.osmosis.core.task.v0_6.Source;</code></div><div class="line number14 index13 alt1"><code class="java keyword">import</code> <code class="java plain">org.openstreetmap.osmosis.osmbinary.file.BlockOutputStream;</code></div><div class="line number15 index14 alt2">&nbsp;</div><div class="line number16 index15 alt1"><code class="java keyword">import</code> <code class="java plain">crosby.binary.osmosis.OsmosisSerializer;</code></div><div class="line number17 index16 alt2">&nbsp;</div><div class="line number18 index17 alt1"><code class="java preprocessor">/**</code></div><div class="line number19 index18 alt2"><code class="java spaces">&nbsp;</code><code class="java preprocessor">* Writes OSM data to the output task.</code></div><div class="line number20 index19 alt1"><code class="java spaces">&nbsp;</code><code class="java preprocessor">* </code></div><div class="line number21 index20 alt2"><code class="java spaces">&nbsp;</code><code class="java preprocessor">* @author pa5cal</code></div><div class="line number22 index21 alt1"><code class="java spaces">&nbsp;</code><code class="java preprocessor">*/</code></div><div class="line number23 index22 alt2"><code class="java keyword">public</code> <code class="java keyword">class</code> <code class="java plain">MyOsmWriter </code><code class="java keyword">implements</code> <code class="java plain">Source {</code></div><div class="line number24 index23 alt1">&nbsp;</div><div class="line number25 index24 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java plain">Sink sink;</code></div><div class="line number26 index25 alt1">&nbsp;</div><div class="line number27 index26 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number28 index27 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">setSink(Sink sink) {</code></div><div class="line number29 index28 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">this</code><code class="java plain">.sink = sink;</code></div><div class="line number30 index29 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number31 index30 alt2">&nbsp;</div><div class="line number32 index31 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">write() {</code></div><div class="line number33 index32 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">for</code> <code class="java plain">(</code><code class="java keyword">int</code> <code class="java plain">idx = </code><code class="java value">1</code><code class="java plain">; idx &lt;= </code><code class="java value">10</code><code class="java plain">; idx++) {</code></div><div class="line number34 index33 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">sink.process(</code><code class="java keyword">new</code> <code class="java plain">NodeContainer(</code><code class="java keyword">new</code> <code class="java plain">Node(createEntity(idx), </code><code class="java value">0</code><code class="java plain">, </code><code class="java value">0</code><code class="java plain">)));</code></div><div class="line number35 index34 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number36 index35 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number37 index36 alt2">&nbsp;</div><div class="line number38 index37 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">complete() {</code></div><div class="line number39 index38 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">sink.complete();</code></div><div class="line number40 index39 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number41 index40 alt2">&nbsp;</div><div class="line number42 index41 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java plain">CommonEntityData createEntity(</code><code class="java keyword">int</code> <code class="java plain">idx) {</code></div><div class="line number43 index42 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java keyword">new</code> <code class="java plain">CommonEntityData(idx, </code><code class="java value">1</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">Date(), </code><code class="java keyword">new</code> <code class="java plain">OsmUser(idx, </code><code class="java string">"User"</code><code class="java plain">), idx);</code></div><div class="line number44 index43 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number45 index44 alt2">&nbsp;</div><div class="line number46 index45 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main(String[] args) </code><code class="java keyword">throws</code> <code class="java plain">FileNotFoundException {</code></div><div class="line number47 index46 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">OutputStream outputStream = </code><code class="java keyword">new</code> <code class="java plain">FileOutputStream(</code><code class="java string">"/Path/To/Your/write.osm.pbf"</code><code class="java plain">);</code></div><div class="line number48 index47 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">MyOsmWriter writer = </code><code class="java keyword">new</code> <code class="java plain">MyOsmWriter();</code></div><div class="line number49 index48 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">writer.setSink(</code><code class="java keyword">new</code> <code class="java plain">OsmosisSerializer(</code><code class="java keyword">new</code> <code class="java plain">BlockOutputStream(outputStream)));</code></div><div class="line number50 index49 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">writer.write();</code></div><div class="line number51 index50 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">writer.complete();</code></div><div class="line number52 index51 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number53 index52 alt2"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p><strong>Step 4: That’s it</strong>&nbsp;– You should now be able to write your own classes that allow you to process compressed OSM data.</p>
+<p><strong>One last thing:</strong> When writing your own Java classes to process OSM data, you should always keep in mind, that the PBF file has it’s own object ordering format of the OSM objects: Each file first contains Nodes, then Ways and at the end Relations. That means, a Way element only contains references to Node ids. It doesn’t contain the coordinates or any tags of the actual nodes that are used for the Way. Thus, if you want a complete Way element with its geometry, you have two options: Store all Nodes in some kind of map or read the entire OSM file twice. Furthermore, if you’re interested in additional compressing options during writing a compressed OSM file, you should have a look at this <a href="https://github.com/openstreetmap/osmosis/blob/master/osmosis-pbf/src/main/java/crosby/binary/osmosis/OsmosisSerializerFactory.java" target="_blank" rel="noopener">class</a>.</p>
+<p>Thanks to&nbsp;<a title="https://twitter.com/den_uf" href="https://twitter.com/den_uf" target="_blank" rel="noopener">maɪˈæmɪ Dennis</a>.</p>
+          </div>
+        </div>
+        <div class="postMeta">
+                  
+          <div class="postDate"><span>Published:</span> <abbr class="published" title="2017-10-09T19:37:49+0200"><a href="https://neis-one.org/2017/10/09/">October 9, 2017</a></abbr></div>
+        	<div class="categories"><span>Filed Under:</span> <a href="https://neis-one.org/category/allgemein/" rel="category tag">Allgemein</a>, <a href="https://neis-one.org/category/howto/" rel="category tag">HowTo</a>, <a href="https://neis-one.org/category/openstreetmap/" rel="category tag">OpenStreetMap</a></div>
+        	<span>Tags:</span> <a href="https://neis-one.org/tag/howto/" rel="tag">HowTo</a> : <a href="https://neis-one.org/tag/osm/" rel="tag">OSM</a>        	
+        	
+
+        </div>
+      </div>
+
+            
+	<!-- You can start editing here. -->
+<div id="comments">
+    	<h3 id="comments">2 Responses to “Processing compressed OpenStreetMap Data with Java”</h3>
+
+  	<div class="navigation">
+  		<div class="alignleft"></div>
+  		<div class="alignright"></div>
+  	</div>
+
+  	<ol class="commentlist">
+  			<li class="comment even thread-even depth-1 parent" id="comment-20277">
+				<div id="div-comment-20277" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/9bf33603772d166237e50ace6c6e57f4.jpeg" srcset="https://secure.gravatar.com/avatar/9bf33603772d166237e50ace6c6e57f4?s=96&amp;d=mm&amp;r=g 2x" class="avatar avatar-48 photo" height="48" width="48">			<cite class="fn">Jan van Bekkum</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://neis-one.org/2017/10/processing-osm-data-java/#comment-20277">
+			November 2nd, 2017 at 19:48				</a>
+						</div>
+
+		<p>It looks like only part of the information is shown with Version 61.0.3163.100 (Official Build) (64-bit). Older versions, Microsoft Edge and Android Chrome display correctly.</p>
+
+		
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-wp_admin bypostauthor odd alt depth-2" id="comment-20278">
+				<div id="div-comment-20278" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/7a8cda7811375896a1bb0cf0809dd234.png" srcset="https://secure.gravatar.com/avatar/7a8cda7811375896a1bb0cf0809dd234?s=96&amp;d=mm&amp;r=g 2x" class="avatar avatar-48 photo" height="48" width="48">			<cite class="fn">Pascal Neis</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://neis-one.org/2017/10/processing-osm-data-java/#comment-20278">
+			November 3rd, 2017 at 12:35				</a>
+						</div>
+
+		<p>Hi Jan, thanks for your comment. I can’t confirm this, everything looks good.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+  	</ol>
+
+  	<div class="navigation">
+  		<div class="alignleft"></div>
+  		<div class="alignright"></div>
+  	</div>
+   
+
+    </div>
+
+  <div class="pageNav">
+    <div class="prev"><a href="https://neis-one.org/2017/09/review-requests-osm/" rel="prev">« Previous Post</a></div>
+    <div class="next"><a href="https://neis-one.org/2017/11/public-profiles-on-hdyc/" rel="next">Next Post »</a></div>
+  </div>
+
+
+	
+</div>
+
+
+</div>
+
+<div id="footer">
+
+  <!-- Footer Links -->
+<!-- 
+  <h5>Elsewhere</h5>
+  <ul class="elsewhere">
+      </ul>
+-->
+  <!-- Search Field -->
+<!--
+  <div class="footerContent">
+    <form method="get" id="searchform" action="https://neis-one.org/">
+      <div id="search">
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+      </div>
+    </form>
+-->
+    
+    <p>Established 2009 - © 2009-2019 Pascal Neis (Neis One!) - neis-one.org - Last modified on 2017-10-9<!-- - Powered by <a href="http://wordpress.org/">WordPress</a> and <a href="http://jimbarraud.com/manifest/">Manifest</a> -->
+  </p></div>
+
+
+<script type="text/javascript" src="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/shCore.js.download"></script>
+<script type="text/javascript" src="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/shBrushXml.js.download"></script>
+<script type="text/javascript" src="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/shBrushJava.js.download"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://neis-one.org/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://neis-one.org/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeEclipse.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+
+	// Infinite scroll support
+	if ( typeof( jQuery ) !== 'undefined' ) {
+		jQuery( function( $ ) {
+			$( document.body ).on( 'post-load', function() {
+				SyntaxHighlighter.highlight();
+			} );
+		} );
+	}
+</script>
+<script type="text/javascript" src="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" src="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/new-tab.min.js.download"></script>
+<script type="text/javascript" src="./Processing compressed OpenStreetMap Data with Java _ Neis One!_files/wp-embed.min.js.download"></script>
+
+
+
+
+<!-- Dynamic page generated in 0.919 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2019-08-27 06:05:10 -->
+
+<!-- super cache --></body></html>

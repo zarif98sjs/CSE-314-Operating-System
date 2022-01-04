@@ -1,0 +1,2 @@
+working dir/dir 1/subdir1/script02.sh
+working dir/dir3/script04.sh
