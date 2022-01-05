@@ -3,6 +3,11 @@
         "ostream": "cpp",
         "iostream": "cpp",
         "initializer_list": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "*.tcc": "cpp",
+        "random": "cpp",
+        "array": "cpp",
+        "algorithm": "cpp",
+        "numeric": "cpp"
     }
 }

@@ -34,25 +34,37 @@ pthread_mutex_t special_kiosk_mutex;
 sem_t kiosk_capacity_sem;
 vector<sem_t>belt_capacity_sem;
 
-/*************** conditional **************/
+/*************** conditional (to block R->L) **************/
 
 pthread_mutex_t L_to_R_mutex     = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t R_to_L_mutex     = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t condition_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t  condition_cond  = PTHREAD_COND_INITIALIZER;
 
+/*************** conditional (to block L->R) **************/
 pthread_mutex_t VIP_lane_lock_mutex     = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t VIP_lane_lock_condition_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t  VIP_lane_lock_condition_cond  = PTHREAD_COND_INITIALIZER;
 
-int random(int min, int max) //range : [min, max]
+/*************** code **************/
+
+template <class T>
+string to_str(T x)
 {
-   return min + (rand() % static_cast<int>(max - min + 1));
+    stringstream ss;
+    ss<<x;
+    return ss.str();
 }
 
 struct Passenger{
 	int pid;
 	bool isVIP;
+
+	string getPassengerId()
+	{
+		if(isVIP) return to_str(pid) + " (VIP)";
+		else return to_str(pid);
+	}
 };
 
 int get_current_time()
@@ -65,6 +77,11 @@ int get_current_time()
 	return (int) time_taken;
 }
 
+int random(int min, int max) //range : [min, max]
+{
+   return min + (rand() % static_cast<int>(max - min + 1));
+}
+
 bool coin_toss()
 {
 	return rand() % 2;
@@ -72,6 +89,7 @@ bool coin_toss()
 
 void recheckin_at_special_kiosk(Passenger &p)
 {
+	/*************** hop off VIP lane and unlock it **************/
 
 	pthread_mutex_lock(&VIP_lane_lock_mutex);
 	VIP_lane_lock = false;
@@ -80,22 +98,20 @@ void recheckin_at_special_kiosk(Passenger &p)
 	pthread_mutex_lock(&R_to_L_mutex);
 	R_to_L--;
 	int cur_time = get_current_time();
-	if(p.isVIP) printf("Passenger %d (VIP) has started waiting at [SPECIAL] kiosk ... at time %d\n",p.pid,cur_time);
-	else printf("Passenger %d has started waiting at [SPECIAL] kiosk ... at time %d\n",p.pid,cur_time);
+	printf("Passenger %s has started waiting at [SPECIAL] kiosk ... at time %d\n",p.getPassengerId().c_str(),cur_time);
 	pthread_mutex_unlock(&R_to_L_mutex);
 
+	/*************** check-in at special kiosk **************/
 
 	pthread_mutex_lock(&special_kiosk_mutex);
 
 	cur_time = get_current_time();
-	if(p.isVIP) printf("Passenger %d (VIP) has started self-check in at [SPECIAL] kiosk ... at time %d\n",p.pid,cur_time);
-	else printf("Passenger %d has started self-check in at [SPECIAL] kiosk ... at time %d\n",p.pid,cur_time);
+	printf("Passenger %s has started self-check in at [SPECIAL] kiosk ... at time %d\n",p.getPassengerId().c_str(),cur_time);
 	
 	sleep(checkin_at_kiosk_w);
 	
 	cur_time = get_current_time();
-	if(p.isVIP) printf("Passenger %d (VIP) has finished check in at [SPECIAL] kiosk at time %d\n",p.pid,cur_time);
-	else printf("Passenger %d has finished check in at [SPECIAL] kiosk at time %d\n",p.pid,cur_time);
+	printf("Passenger %s has finished check in at [SPECIAL] kiosk at time %d\n",p.getPassengerId().c_str(),cur_time);
 
 	L_to_R++; // everyone will come back to boarding through VIP channel
 
@@ -105,12 +121,16 @@ void recheckin_at_special_kiosk(Passenger &p)
 
 void go_back(Passenger &p)
 {
+	/*************** put in R->L queue **************/
+
 	pthread_mutex_lock(&R_to_L_mutex);
 	R_to_L++;
-	printf("[GO BACK] Passenger %d\n",p.pid);
+	printf("[GO BACK] Passenger %s\n",p.getPassengerId().c_str());
 	pthread_mutex_unlock(&R_to_L_mutex);
 
-	printf("R to L : %d ... Passenger %d\n",R_to_L,p.pid);
+	printf("R to L : %d ... Passenger %s\n",R_to_L,p.getPassengerId().c_str());
+
+	/*************** wait until there is a signal that no (L->R) person is on the opposite side **************/
 
 	pthread_mutex_lock( &condition_mutex );
 	while( L_to_R > 0 )
@@ -119,18 +139,22 @@ void go_back(Passenger &p)
 	}
 	pthread_mutex_unlock( &condition_mutex );
 
+	/*************** hop on VIP lane and lock it **************/
+
 	pthread_mutex_lock(&VIP_lane_lock_mutex);
 	VIP_lane_lock = true;
 	pthread_mutex_unlock(&VIP_lane_lock_mutex);
 
 	int cur_time = get_current_time();
-	printf("Passenger %d has started walking through VIP channel at time %d ... [R to L] |||| L to R : %d \n",p.pid,cur_time,L_to_R);
-	sleep(30); // VIP WALK : R->L
-	// sleep(vip_walk_z); // VIP WALK : R->L
+	printf("Passenger %s has started walking through VIP channel at time %d ... [R to L] |||| L to R : %d \n",p.getPassengerId().c_str(),cur_time,L_to_R);
+	// sleep(30); // VIP WALK : R->L
+	sleep(vip_walk_z); // VIP WALK : R->L
+
+	/*************** re check-in **************/
 
 	recheckin_at_special_kiosk(p);
 
-	//////////////
+	/*************** wait until there is a signal that no (R->L) person is on the opposite side **************/
 
 	pthread_mutex_lock( &VIP_lane_lock_condition_mutex);
 	while( VIP_lane_lock )
@@ -139,9 +163,10 @@ void go_back(Passenger &p)
 	}
 	pthread_mutex_unlock( &VIP_lane_lock_condition_mutex );
 
+	/*************** hop on VIP lane **************/
 
 	cur_time = get_current_time();
-	printf("Passenger %d has started walking through VIP channel at time %d ... [L to R] |||| R to L : %d \n",p.pid,cur_time,R_to_L);
+	printf("Passenger %s has started walking through VIP channel at time %d ... [L to R] |||| R to L : %d \n",p.getPassengerId().c_str(),cur_time,R_to_L);
 	sleep(vip_walk_z); // VIP WALK : L->R
 }
 
@@ -151,8 +176,8 @@ void boarding_on_plane(Passenger &p)
 	if(p.isVIP) L_to_R--;
 
 	int cur_time = get_current_time();
-	if(p.isVIP) printf("[DEC L_to_R] Passenger %d (VIP) has started waiting to be boarded at time %d\n",p.pid,cur_time);
-	else printf("Passenger %d has started waiting to be boarded at time %d\n",p.pid,cur_time);
+	
+	printf("Passenger %s has started waiting to be boarded at time %d\n",p.getPassengerId().c_str(),cur_time);
 	pthread_mutex_unlock(&L_to_R_mutex);
 
 	if(coin_toss()) 
@@ -161,22 +186,21 @@ void boarding_on_plane(Passenger &p)
 
 		pthread_mutex_lock(&L_to_R_mutex);
 		L_to_R--;
-		printf("[DEC L_to_R] Passenger %d (VIP) has started waiting to be boarded AGAIN at time %d\n",p.pid,cur_time);
+		printf("[DEC L_to_R] Passenger %s (VIP) has started waiting to be boarded AGAIN at time %d\n",p.getPassengerId().c_str(),cur_time);
 		pthread_mutex_unlock(&L_to_R_mutex);
 	}
 	
-
 	pthread_mutex_lock(&boarding_mutex);
 
 	cur_time = get_current_time();
-	if(p.isVIP) printf("Passenger %d (VIP) has started boarding the plane at time %d\n",p.pid,cur_time);
-	else printf("Passenger %d has started boarding the plane at time %d\n",p.pid,cur_time);
+	
+	printf("Passenger %s has started boarding the plane at time %d\n",p.getPassengerId().c_str(),cur_time);
 	
 	sleep(boarding_y);
 	
 	cur_time = get_current_time();
-	if(p.isVIP) printf("Passenger %d (VIP) has boarded the plane at time %d ---------------------------------------- DONE\n",p.pid,cur_time);
-	else printf("Passenger %d has boarded the plane at time %d ---------------------------------------- DONE\n",p.pid,cur_time);
+	
+	printf("Passenger %s has boarded the plane at time %d ---------------------------------------- DONE\n",p.getPassengerId().c_str(),cur_time);
 	
 	pthread_mutex_unlock(&boarding_mutex);
 }
@@ -186,17 +210,17 @@ void security_check(Passenger &p)
 {
 	int belt_id = random(0,belts-1);
 	int cur_time = get_current_time();
-	printf("Passenger %d has started waiting for security check in belt %d from time %d\n",p.pid,belt_id,cur_time);
+	printf("Passenger %s has started waiting for security check in belt %d from time %d\n",p.getPassengerId().c_str(),belt_id,cur_time);
 
 	sem_wait(&belt_capacity_sem[belt_id]); //down
 
 	cur_time = get_current_time();
-	printf("Passenger %d has started the security check at time %d\n",p.pid,cur_time);
+	printf("Passenger %s has started the security check at time %d\n",p.getPassengerId().c_str(),cur_time);
 	
 	sleep(security_x);
 
 	cur_time = get_current_time();
-	printf("Passenger %d crossed the security check at time %d\n",p.pid,cur_time);
+	printf("Passenger %s crossed the security check at time %d\n",p.getPassengerId().c_str(),cur_time);
 
 	sem_post(&belt_capacity_sem[belt_id]); //up
 }
@@ -206,14 +230,12 @@ void checkin_at_kiosk(Passenger &p)
 	sem_wait(&kiosk_capacity_sem); //down
 
 	int cur_time = get_current_time();
-	if(p.isVIP) printf("Passenger %d (VIP) has started self-check in at kiosk ... at time %d\n",p.pid,cur_time);
-	else printf("Passenger %d has started self-check in at kiosk ... at time %d\n",p.pid,cur_time);
+	printf("Passenger %s has started self-check in at kiosk ... at time %d\n",p.getPassengerId().c_str(),cur_time);
 	
 	sleep(checkin_at_kiosk_w);
 	
 	cur_time = get_current_time();
-	if(p.isVIP) printf("Passenger %d (VIP) has finished check in at time %d\n",p.pid,cur_time);
-	else printf("Passenger %d has finished check in at time %d\n",p.pid,cur_time);
+	printf("Passenger %s has finished check in at time %d\n",p.getPassengerId().c_str(),cur_time);
 	
 	if(p.isVIP) L_to_R++; // only VIP will go through the VIP channel
 	
@@ -226,27 +248,18 @@ void * arrival(void* p)
 {
 	struct Passenger *passenger = (struct Passenger*)p;
 	int cur_time = get_current_time();
-	if((*passenger).isVIP) printf("Passenger %d (VIP) has arrived at time %d\n",(*passenger).pid,cur_time);
-	else printf("Passenger %d has arrived at time %d\n",(*passenger).pid,cur_time);
+
+	printf("Passenger %s has arrived at time %d\n",(*passenger).getPassengerId().c_str(),cur_time);
 
 	checkin_at_kiosk(*passenger);
 	if(!(*passenger).isVIP) security_check(*passenger);
 
 	if(!(*passenger).isVIP) boarding_on_plane(*passenger);
 	else{
-		// CONSIDER PROBLEM WITH L_TO_R LANE
 
-		// cout<<"L to R : "<<L_to_R<<endl;
-		printf("L to R : %d ... Passenger %d\n",L_to_R,(*passenger).pid);
+		// CONSIDER PROBLEM WITH VIP LANE
 
-		// CONDITIONAL SIGNAL HERE
-		// pthread_mutex_lock( &condition_mutex );
-		// if( L_to_R == 0 )
-		// {
-		// 	// printf("Here ... Passenger %d",(*passenger).pid);
-		// 	pthread_cond_broadcast( &condition_cond );
-		// }
-		// pthread_mutex_unlock( &condition_mutex );
+		printf("L to R : %d ... Passenger %s\n",L_to_R,(*passenger).getPassengerId().c_str());
 
 		pthread_mutex_lock( &VIP_lane_lock_condition_mutex);
 		while( VIP_lane_lock )
@@ -255,9 +268,8 @@ void * arrival(void* p)
 		}
 		pthread_mutex_unlock( &VIP_lane_lock_condition_mutex );
 
-
 		cur_time = get_current_time();
-		printf("Passenger %d has started walking through VIP channel at time %d ... [L to R] |||| R to L : %d \n",(*passenger).pid,cur_time,R_to_L);
+		printf("Passenger %s has started walking through VIP channel at time %d ... [L to R] |||| R to L : %d \n",(*passenger).getPassengerId().c_str(),cur_time,R_to_L);
 		sleep(vip_walk_z); // VIP WALK : L->R
 
 		boarding_on_plane(*passenger); // starts boarding 
