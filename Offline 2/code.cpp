@@ -18,6 +18,8 @@ int R_to_L = 0;
 
 bool VIP_lane_lock = false;
 
+queue<int>Q;
+
 /*************** time **************/
 
 time_t start_time, record_time;
@@ -29,6 +31,7 @@ pthread_t conditional_thread;
 /*************** mutex **************/
 pthread_mutex_t boarding_mutex;
 pthread_mutex_t special_kiosk_mutex;
+pthread_mutex_t queue_mutex;
 
 /*************** semaphore **************/
 sem_t kiosk_capacity_sem;
@@ -148,7 +151,7 @@ void go_back(Passenger &p)
 
 	pthread_mutex_unlock(&VIP_lane_lock_mutex);
 
-	printf("Passenger %s has started walking through VIP channel at time %d ... [R to L] |||| L to R : %d \n",p.getPassengerId().c_str(),get_current_time(),L_to_R);
+	printf("Passenger %s has started walking through VIP channel at time %d ... [R to L]\n",p.getPassengerId().c_str(),get_current_time());
 	// sleep(30); // VIP WALK : R->L
 	sleep(vip_walk_z); // VIP WALK : R->L
 
@@ -168,7 +171,7 @@ void go_back(Passenger &p)
 
 	/*************** hop on VIP lane **************/
 
-	printf("Passenger %s has started walking through VIP channel at time %d ... [L to R] |||| R to L : %d \n",p.getPassengerId().c_str(),get_current_time(),R_to_L);
+	printf("Passenger %s has started walking through VIP channel at time %d ... [L to R]\n",p.getPassengerId().c_str(),get_current_time());
 	sleep(vip_walk_z); // VIP WALK : L->R
 }
 
@@ -188,7 +191,7 @@ void boarding_on_plane(Passenger &p)
 		pthread_mutex_lock(&L_to_R_mutex);
 
 			L_to_R--;
-			printf("[DEC L_to_R] Passenger %s (VIP) has started waiting to be boarded AGAIN at time %d\n",p.getPassengerId().c_str(),get_current_time());
+			printf("Passenger %s (VIP) has started waiting to be boarded AGAIN at time %d\n",p.getPassengerId().c_str(),get_current_time());
 		
 		pthread_mutex_unlock(&L_to_R_mutex);
 	}
@@ -221,12 +224,30 @@ void checkin_at_kiosk(Passenger &p)
 {
 	sem_wait(&kiosk_capacity_sem); //down
 
-		printf("Passenger %s has started self-check in at kiosk ... at time %d\n",p.getPassengerId().c_str(),get_current_time());
+		pthread_mutex_lock(&queue_mutex);
+
+			int kiosk_id = Q.front();
+			Q.pop();
+			printf("Passenger %s has started self-check in at kiosk %d at time %d\n",p.getPassengerId().c_str(), kiosk_id, get_current_time());
+
+		pthread_mutex_unlock(&queue_mutex);
+
 		sleep(checkin_at_kiosk_w);
+
+		pthread_mutex_lock(&queue_mutex);
+
+			Q.push(kiosk_id);
+
+		pthread_mutex_unlock(&queue_mutex);
+		
 		printf("Passenger %s has finished check in at time %d\n",p.getPassengerId().c_str(),get_current_time());
 		
-		if(p.isVIP) L_to_R++; // only VIP will go through the VIP channel
-	
+		pthread_mutex_lock(&L_to_R_mutex);
+
+			if(p.isVIP) L_to_R++; // only VIP will go through the VIP channel
+		
+		pthread_mutex_unlock(&L_to_R_mutex);
+
 	sem_post(&kiosk_capacity_sem); // up	
 }
 
@@ -256,7 +277,7 @@ void * arrival(void* p)
 
 		pthread_mutex_unlock( &VIP_lane_lock_condition_mutex );
 
-		printf("Passenger %s has started walking through VIP channel at time %d ... [L to R] |||| R to L : %d \n",(*passenger).getPassengerId().c_str(),get_current_time(),R_to_L);
+		printf("Passenger %s has started walking through VIP channel at time %d ... [L to R]\n",(*passenger).getPassengerId().c_str(),get_current_time());
 		sleep(vip_walk_z); // VIP WALK : L->R
 
 		boarding_on_plane(*passenger); // starts boarding 
@@ -282,12 +303,19 @@ void *broadcast_function(void* arg)
 			if( !VIP_lane_lock ){	
 				pthread_cond_broadcast( &VIP_lane_lock_condition_cond );
 			}
-			
+
 		pthread_mutex_unlock( &VIP_lane_lock_condition_mutex );
 	}
 	
 }
 
+/// rate parameter = 20 person per 60 second = 20/60 = 1/3 
+
+double nextTime(float rateParameter)
+{
+	double ret = -logf(1.0f - (double) random() / ((double)RAND_MAX + 1)) / rateParameter;
+    return  ret;
+}
 
 int main(void)
 {	
@@ -295,7 +323,7 @@ int main(void)
 	// srand ( 15 );
 
 	READ;
-	// WRITE;
+	WRITE;
 
 	/*************** input **************/
 
@@ -311,6 +339,8 @@ int main(void)
 	cout<<boarding_y<<endl;
 	cout<<vip_walk_z<<endl;
 
+	for(int i=1;i<=kiosks;i++) Q.push(i);
+
 	/*************** time **************/
 
 	time(&start_time);
@@ -319,6 +349,7 @@ int main(void)
 	
 	pthread_mutex_init(&boarding_mutex, NULL);
 	pthread_mutex_init(&special_kiosk_mutex, NULL);
+	pthread_mutex_init(&queue_mutex, NULL);
 
 	/*************** semaphore init **************/
 
@@ -338,6 +369,9 @@ int main(void)
 		(*passenger).isVIP = coin_toss();
 
 		pthread_create(&passenger_threads[i],NULL,arrival,(void*) passenger);
+		int time_diff = nextTime(1.0/3);
+		cout<<"SLEEP "<<time_diff<<endl;
+		sleep(time_diff);
 	}
 
 	pthread_create(&conditional_thread,NULL,broadcast_function,NULL);
