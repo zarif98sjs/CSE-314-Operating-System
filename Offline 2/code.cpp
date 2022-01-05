@@ -73,6 +73,10 @@ bool coin_toss()
 void recheckin_at_special_kiosk(Passenger &p)
 {
 
+	pthread_mutex_lock(&VIP_lane_lock_mutex);
+	VIP_lane_lock = false;
+	pthread_mutex_unlock(&VIP_lane_lock_mutex);
+
 	pthread_mutex_lock(&R_to_L_mutex);
 	R_to_L--;
 	int cur_time = get_current_time();
@@ -115,11 +119,26 @@ void go_back(Passenger &p)
 	}
 	pthread_mutex_unlock( &condition_mutex );
 
+	pthread_mutex_lock(&VIP_lane_lock_mutex);
+	VIP_lane_lock = true;
+	pthread_mutex_unlock(&VIP_lane_lock_mutex);
+
 	int cur_time = get_current_time();
 	printf("Passenger %d has started walking through VIP channel at time %d ... [R to L] |||| L to R : %d \n",p.pid,cur_time,L_to_R);
-	sleep(vip_walk_z); // VIP WALK : R->L
+	sleep(30); // VIP WALK : R->L
+	// sleep(vip_walk_z); // VIP WALK : R->L
 
 	recheckin_at_special_kiosk(p);
+
+	//////////////
+
+	pthread_mutex_lock( &VIP_lane_lock_condition_mutex);
+	while( VIP_lane_lock )
+	{
+		pthread_cond_wait( &VIP_lane_lock_condition_cond, &VIP_lane_lock_condition_mutex );
+	}
+	pthread_mutex_unlock( &VIP_lane_lock_condition_mutex );
+
 
 	cur_time = get_current_time();
 	printf("Passenger %d has started walking through VIP channel at time %d ... [L to R] |||| R to L : %d \n",p.pid,cur_time,R_to_L);
@@ -229,9 +248,17 @@ void * arrival(void* p)
 		// }
 		// pthread_mutex_unlock( &condition_mutex );
 
+		pthread_mutex_lock( &VIP_lane_lock_condition_mutex);
+		while( VIP_lane_lock )
+		{
+			pthread_cond_wait( &VIP_lane_lock_condition_cond, &VIP_lane_lock_condition_mutex );
+		}
+		pthread_mutex_unlock( &VIP_lane_lock_condition_mutex );
+
+
 		cur_time = get_current_time();
 		printf("Passenger %d has started walking through VIP channel at time %d ... [L to R] |||| R to L : %d \n",(*passenger).pid,cur_time,R_to_L);
-		sleep(vip_walk_z); // VIP WALK
+		sleep(vip_walk_z); // VIP WALK : L->R
 
 		boarding_on_plane(*passenger); // starts boarding 
 	}	
@@ -249,6 +276,15 @@ void *broadcast_function(void* arg)
 			pthread_cond_broadcast( &condition_cond );
 		}
 		pthread_mutex_unlock( &condition_mutex );
+
+		// CONDITIONAL SIGNAL HERE
+		pthread_mutex_lock( &VIP_lane_lock_condition_mutex );
+		if( !VIP_lane_lock )
+		{	
+			// printf("Broadcasting....");
+			pthread_cond_broadcast( &VIP_lane_lock_condition_cond );
+		}
+		pthread_mutex_unlock( &VIP_lane_lock_condition_mutex );
 	}
 	
 }
@@ -257,7 +293,7 @@ void *broadcast_function(void* arg)
 int main(void)
 {	
 	srand ( time(NULL) );
-	// srand ( 42 );
+	// srand ( 15 );
 
 	READ;
 	// WRITE;
