@@ -1,5 +1,0 @@
-.html
-.mp3
-.pdf
-.png
-.sh

@@ -1,0 +1,41 @@
+3
+2
+1
+8
+10
+12
+3
+Passenger 1 has arrived at time 0
+Passenger 1 has started self-check in at kiosk 1 at time 0
+SLEEP 4
+SLEEP 5
+Passenger 2 (VIP) has arrived at time 4
+Passenger 2 (VIP) has started self-check in at kiosk 2 at time 4
+Passenger 1 has finished check in at time 8
+Passenger 1 has started waiting for security check in belt 0 from time 8
+Passenger 1 has started the security check at time 8
+SLEEP 1
+Passenger 3 (VIP) has arrived at time 9
+Passenger 3 (VIP) has started self-check in at kiosk 3 at time 9
+SLEEP 0
+Passenger 4 (VIP) has arrived at time 10
+Passenger 4 (VIP) has started self-check in at kiosk 1 at time 10
+SLEEP 0
+Passenger 5 (VIP) has arrived at time 10
+Passenger 2 (VIP) has finished check in at time 12
+L to R : 1 ... Passenger 2 (VIP)
+Passenger 2 (VIP) has started walking through VIP channel at time 12 ... [L to R]
+Passenger 5 (VIP) has started self-check in at kiosk 2 at time 12
+Passenger 2 (VIP) has started waiting to be boarded at time 15
+[GO BACK] Passenger 2 (VIP)
+R to L : 1 ... Passenger 2 (VIP)
+Passenger 2 (VIP) has started walking through VIP channel at time 15 ... [R to L]
+Passenger 3 (VIP) has finished check in at time 17
+L to R : 1 ... Passenger 3 (VIP)
+Passenger 1 crossed the security check at time 18
+Passenger 1 has started waiting to be boarded at time 18
+[GO BACK] Passenger 1
+R to L : 2 ... Passenger 1
+Passenger 2 (VIP) has started waiting at [SPECIAL] kiosk ... at time 18
+Passenger 2 (VIP) has started self-check in at [SPECIAL] kiosk ... at time 18
+Passenger 3 (VIP) has started w

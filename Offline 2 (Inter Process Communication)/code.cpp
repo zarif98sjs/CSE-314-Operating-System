@@ -152,8 +152,8 @@ void go_back(Passenger &p)
 	pthread_mutex_unlock(&VIP_lane_lock_mutex);
 
 	printf("Passenger %s has started walking through VIP channel at time %d ... [R to L]\n",p.getPassengerId().c_str(),get_current_time());
-	// sleep(30); // VIP WALK : R->L
-	sleep(vip_walk_z); // VIP WALK : R->L
+	sleep(30); // VIP WALK : R->L
+	// sleep(vip_walk_z); // VIP WALK : R->L
 
 	/*************** re check-in **************/
 
@@ -323,7 +323,7 @@ int main(void)
 	// srand ( 15 );
 
 	READ;
-	WRITE;
+	// WRITE;
 
 	/*************** input **************/
 
