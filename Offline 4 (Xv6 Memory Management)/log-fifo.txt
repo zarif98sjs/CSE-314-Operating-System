@@ -1,0 +1,964 @@
+SeaBIOS (version 1.13.0-1ubuntu1.1)
+
+
+iPXE (http://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+1FF8CA10+1FECCA10 CA00
+                                                                               
+
+
+Booting from Hard Disk..xv6...
+cpu1: starting 1
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+>>init: starting sh
+Inside wait : 1
+$ demoTest
+Inside wait : 2
+inside morecore, after sbrk
+page to be freed id : 12
+page to be freed id : 13
+page to be freed id : 14
+page to be freed id : 0
+page to be freed id : 1
+page to be freed id : 2
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 18 , pgdir 8df23000 , timer 33          INUSE
+Physical page id 1 : VPN 19 , pgdir 8df23000 , timer 34          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 6 , pgdir 8df23000 , timer 21   INUSE
+Physical page id 4 : VPN 7 , pgdir 8df23000 , timer 22   INUSE
+Physical page id 5 : VPN 8 , pgdir 8df23000 , timer 23   INUSE
+Physical page id 6 : VPN 9 , pgdir 8df23000 , timer 24   INUSE
+Physical page id 7 : VPN 10 , pgdir 8df23000 , timer 25          INUSE
+Physical page id 8 : VPN 11 , pgdir 8df23000 , timer 26          INUSE
+Physical page id 9 : VPN 12 , pgdir 8df23000 , timer 27          INUSE
+Physical page id 10 : VPN 13 , pgdir 8df23000 , timer 28         INUSE
+Physical page id 11 : VPN 14 , pgdir 8df23000 , timer 29         INUSE
+Physical page id 12 : VPN 15 , pgdir 8df23000 , timer 30         INUSE
+Physical page id 13 : VPN 16 , pgdir 8df23000 , timer 31         INUSE
+Physical page id 14 : VPN 17 , pgdir 8df23000 , timer 32         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 0 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 2 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 3 : VPN 3 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 4 : VPN 4 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 5 : VPN 5 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 6 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 0 
+checking 1362
+page to be freed id : 3
+YAYYY , ESCAPED TRAP
+
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 18 , pgdir 8df23000 , timer 33          INUSE
+Physical page id 1 : VPN 19 , pgdir 8df23000 , timer 34          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 7 , pgdir 8df23000 , timer 22   INUSE
+Physical page id 5 : VPN 8 , pgdir 8df23000 , timer 23   INUSE
+Physical page id 6 : VPN 9 , pgdir 8df23000 , timer 24   INUSE
+Physical page id 7 : VPN 10 , pgdir 8df23000 , timer 25          INUSE
+Physical page id 8 : VPN 11 , pgdir 8df23000 , timer 26          INUSE
+Physical page id 9 : VPN 12 , pgdir 8df23000 , timer 27          INUSE
+Physical page id 10 : VPN 13 , pgdir 8df23000 , timer 28         INUSE
+Physical page id 11 : VPN 14 , pgdir 8df23000 , timer 29         INUSE
+Physical page id 12 : VPN 15 , pgdir 8df23000 , timer 30         INUSE
+Physical page id 13 : VPN 16 , pgdir 8df23000 , timer 31         INUSE
+Physical page id 14 : VPN 17 , pgdir 8df23000 , timer 32         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 0 , pgdir 8df23000 , timer 0 
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 2 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 3 : VPN 3 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 4 : VPN 4 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 5 : VPN 5 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 6 : VPN 6 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 2 
+checking 12140
+page to be freed id : 4
+YAYYY , ESCAPED TRAP
+
+inside morecore, after sbrk
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 18 , pgdir 8df23000 , timer 33          INUSE
+Physical page id 1 : VPN 19 , pgdir 8df23000 , timer 34          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 8 , pgdir 8df23000 , timer 23   INUSE
+Physical page id 6 : VPN 9 , pgdir 8df23000 , timer 24   INUSE
+Physical page id 7 : VPN 10 , pgdir 8df23000 , timer 25          INUSE
+Physical page id 8 : VPN 11 , pgdir 8df23000 , timer 26          INUSE
+Physical page id 9 : VPN 12 , pgdir 8df23000 , timer 27          INUSE
+Physical page id 10 : VPN 13 , pgdir 8df23000 , timer 28         INUSE
+Physical page id 11 : VPN 14 , pgdir 8df23000 , timer 29         INUSE
+Physical page id 12 : VPN 15 , pgdir 8df23000 , timer 30         INUSE
+Physical page id 13 : VPN 16 , pgdir 8df23000 , timer 31         INUSE
+Physical page id 14 : VPN 17 , pgdir 8df23000 , timer 32         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 7 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 2 , pgdir 8df23000 , timer 0 
+Disk page id 3 : VPN 3 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 4 : VPN 4 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 5 : VPN 5 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 6 : VPN 6 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 3 
+checking 12292
+page to be freed id : 5
+YAYYY , ESCAPED TRAP
+
+Numpage = 17 --- MALLOC 3008
+Accessing page 0
+Accessing page 1
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 18 , pgdir 8df23000 , timer 33          INUSE
+Physical page id 1 : VPN 19 , pgdir 8df23000 , timer 34          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 9 , pgdir 8df23000 , timer 24   INUSE
+Physical page id 7 : VPN 10 , pgdir 8df23000 , timer 25          INUSE
+Physical page id 8 : VPN 11 , pgdir 8df23000 , timer 26          INUSE
+Physical page id 9 : VPN 12 , pgdir 8df23000 , timer 27          INUSE
+Physical page id 10 : VPN 13 , pgdir 8df23000 , timer 28         INUSE
+Physical page id 11 : VPN 14 , pgdir 8df23000 , timer 29         INUSE
+Physical page id 12 : VPN 15 , pgdir 8df23000 , timer 30         INUSE
+Physical page id 13 : VPN 16 , pgdir 8df23000 , timer 31         INUSE
+Physical page id 14 : VPN 17 , pgdir 8df23000 , timer 32         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 7 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 8 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 3 : VPN 3 , pgdir 8df23000 , timer 0 
+Disk page id 4 : VPN 4 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 5 : VPN 5 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 6 : VPN 6 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 4 
+checking 16392
+page to be freed id : 6
+YAYYY , ESCAPED TRAP
+
+Accessing page 2
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 18 , pgdir 8df23000 , timer 33          INUSE
+Physical page id 1 : VPN 19 , pgdir 8df23000 , timer 34          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 10 , pgdir 8df23000 , timer 25          INUSE
+Physical page id 8 : VPN 11 , pgdir 8df23000 , timer 26          INUSE
+Physical page id 9 : VPN 12 , pgdir 8df23000 , timer 27          INUSE
+Physical page id 10 : VPN 13 , pgdir 8df23000 , timer 28         INUSE
+Physical page id 11 : VPN 14 , pgdir 8df23000 , timer 29         INUSE
+Physical page id 12 : VPN 15 , pgdir 8df23000 , timer 30         INUSE
+Physical page id 13 : VPN 16 , pgdir 8df23000 , timer 31         INUSE
+Physical page id 14 : VPN 17 , pgdir 8df23000 , timer 32         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 7 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 8 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 3 : VPN 9 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 4 : VPN 4 , pgdir 8df23000 , timer 0 
+Disk page id 5 : VPN 5 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 6 : VPN 6 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 5 
+checking 20488
+page to be freed id : 7
+YAYYY , ESCAPED TRAP
+
+Accessing page 3
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 18 , pgdir 8df23000 , timer 33          INUSE
+Physical page id 1 : VPN 19 , pgdir 8df23000 , timer 34          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 11 , pgdir 8df23000 , timer 26          INUSE
+Physical page id 9 : VPN 12 , pgdir 8df23000 , timer 27          INUSE
+Physical page id 10 : VPN 13 , pgdir 8df23000 , timer 28         INUSE
+Physical page id 11 : VPN 14 , pgdir 8df23000 , timer 29         INUSE
+Physical page id 12 : VPN 15 , pgdir 8df23000 , timer 30         INUSE
+Physical page id 13 : VPN 16 , pgdir 8df23000 , timer 31         INUSE
+Physical page id 14 : VPN 17 , pgdir 8df23000 , timer 32         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 7 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 8 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 3 : VPN 9 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 4 : VPN 10 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 5 : VPN 5 , pgdir 8df23000 , timer 0 
+Disk page id 6 : VPN 6 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 6 
+checking 24584
+page to be freed id : 8
+YAYYY , ESCAPED TRAP
+
+Accessing page 4
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 18 , pgdir 8df23000 , timer 33          INUSE
+Physical page id 1 : VPN 19 , pgdir 8df23000 , timer 34          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 12 , pgdir 8df23000 , timer 27          INUSE
+Physical page id 10 : VPN 13 , pgdir 8df23000 , timer 28         INUSE
+Physical page id 11 : VPN 14 , pgdir 8df23000 , timer 29         INUSE
+Physical page id 12 : VPN 15 , pgdir 8df23000 , timer 30         INUSE
+Physical page id 13 : VPN 16 , pgdir 8df23000 , timer 31         INUSE
+Physical page id 14 : VPN 17 , pgdir 8df23000 , timer 32         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 7 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 8 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 3 : VPN 9 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 4 : VPN 10 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 5 : VPN 11 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 6 : VPN 6 , pgdir 8df23000 , timer 0 
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 7 
+checking 28680
+page to be freed id : 9
+YAYYY , ESCAPED TRAP
+
+Accessing page 5
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 18 , pgdir 8df23000 , timer 33          INUSE
+Physical page id 1 : VPN 19 , pgdir 8df23000 , timer 34          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 7 , pgdir 8df23000 , timer 42   INUSE
+Physical page id 10 : VPN 13 , pgdir 8df23000 , timer 28         INUSE
+Physical page id 11 : VPN 14 , pgdir 8df23000 , timer 29         INUSE
+Physical page id 12 : VPN 15 , pgdir 8df23000 , timer 30         INUSE
+Physical page id 13 : VPN 16 , pgdir 8df23000 , timer 31         INUSE
+Physical page id 14 : VPN 17 , pgdir 8df23000 , timer 32         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 7 , pgdir 8df23000 , timer 0 
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 8 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 3 : VPN 9 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 4 : VPN 10 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 5 : VPN 11 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 6 : VPN 12 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 8 
+checking 32776
+page to be freed id : 10
+YAYYY , ESCAPED TRAP
+
+Accessing page 6
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 18 , pgdir 8df23000 , timer 33          INUSE
+Physical page id 1 : VPN 19 , pgdir 8df23000 , timer 34          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 7 , pgdir 8df23000 , timer 42   INUSE
+Physical page id 10 : VPN 8 , pgdir 8df23000 , timer 43          INUSE
+Physical page id 11 : VPN 14 , pgdir 8df23000 , timer 29         INUSE
+Physical page id 12 : VPN 15 , pgdir 8df23000 , timer 30         INUSE
+Physical page id 13 : VPN 16 , pgdir 8df23000 , timer 31         INUSE
+Physical page id 14 : VPN 17 , pgdir 8df23000 , timer 32         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 13 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 8 , pgdir 8df23000 , timer 0 
+Disk page id 3 : VPN 9 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 4 : VPN 10 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 5 : VPN 11 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 6 : VPN 12 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 9 
+checking 36872
+page to be freed id : 11
+YAYYY , ESCAPED TRAP
+
+Accessing page 7
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 18 , pgdir 8df23000 , timer 33          INUSE
+Physical page id 1 : VPN 19 , pgdir 8df23000 , timer 34          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 7 , pgdir 8df23000 , timer 42   INUSE
+Physical page id 10 : VPN 8 , pgdir 8df23000 , timer 43          INUSE
+Physical page id 11 : VPN 9 , pgdir 8df23000 , timer 44          INUSE
+Physical page id 12 : VPN 15 , pgdir 8df23000 , timer 30         INUSE
+Physical page id 13 : VPN 16 , pgdir 8df23000 , timer 31         INUSE
+Physical page id 14 : VPN 17 , pgdir 8df23000 , timer 32         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 13 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 14 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 3 : VPN 9 , pgdir 8df23000 , timer 0 
+Disk page id 4 : VPN 10 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 5 : VPN 11 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 6 : VPN 12 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 10 
+checking 40968
+page to be freed id : 12
+YAYYY , ESCAPED TRAP
+
+Accessing page 8
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 18 , pgdir 8df23000 , timer 33          INUSE
+Physical page id 1 : VPN 19 , pgdir 8df23000 , timer 34          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 7 , pgdir 8df23000 , timer 42   INUSE
+Physical page id 10 : VPN 8 , pgdir 8df23000 , timer 43          INUSE
+Physical page id 11 : VPN 9 , pgdir 8df23000 , timer 44          INUSE
+Physical page id 12 : VPN 10 , pgdir 8df23000 , timer 45         INUSE
+Physical page id 13 : VPN 16 , pgdir 8df23000 , timer 31         INUSE
+Physical page id 14 : VPN 17 , pgdir 8df23000 , timer 32         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 13 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 14 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 3 : VPN 15 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 4 : VPN 10 , pgdir 8df23000 , timer 0 
+Disk page id 5 : VPN 11 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 6 : VPN 12 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 11 
+checking 45064
+page to be freed id : 13
+YAYYY , ESCAPED TRAP
+
+Accessing page 9
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 18 , pgdir 8df23000 , timer 33          INUSE
+Physical page id 1 : VPN 19 , pgdir 8df23000 , timer 34          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 7 , pgdir 8df23000 , timer 42   INUSE
+Physical page id 10 : VPN 8 , pgdir 8df23000 , timer 43          INUSE
+Physical page id 11 : VPN 9 , pgdir 8df23000 , timer 44          INUSE
+Physical page id 12 : VPN 10 , pgdir 8df23000 , timer 45         INUSE
+Physical page id 13 : VPN 11 , pgdir 8df23000 , timer 46         INUSE
+Physical page id 14 : VPN 17 , pgdir 8df23000 , timer 32         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 13 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 14 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 3 : VPN 15 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 4 : VPN 16 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 5 : VPN 11 , pgdir 8df23000 , timer 0 
+Disk page id 6 : VPN 12 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 12 
+checking 49160
+page to be freed id : 14
+YAYYY , ESCAPED TRAP
+
+Accessing page 10
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 18 , pgdir 8df23000 , timer 33          INUSE
+Physical page id 1 : VPN 19 , pgdir 8df23000 , timer 34          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 7 , pgdir 8df23000 , timer 42   INUSE
+Physical page id 10 : VPN 8 , pgdir 8df23000 , timer 43          INUSE
+Physical page id 11 : VPN 9 , pgdir 8df23000 , timer 44          INUSE
+Physical page id 12 : VPN 10 , pgdir 8df23000 , timer 45         INUSE
+Physical page id 13 : VPN 11 , pgdir 8df23000 , timer 46         INUSE
+Physical page id 14 : VPN 12 , pgdir 8df23000 , timer 47         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 13 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 14 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 3 : VPN 15 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 4 : VPN 16 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 5 : VPN 17 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 6 : VPN 12 , pgdir 8df23000 , timer 0 
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 13 
+checking 53256
+page to be freed id : 0
+YAYYY , ESCAPED TRAP
+
+Accessing page 11
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 13 , pgdir 8df23000 , timer 48          INUSE
+Physical page id 1 : VPN 19 , pgdir 8df23000 , timer 34          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 7 , pgdir 8df23000 , timer 42   INUSE
+Physical page id 10 : VPN 8 , pgdir 8df23000 , timer 43          INUSE
+Physical page id 11 : VPN 9 , pgdir 8df23000 , timer 44          INUSE
+Physical page id 12 : VPN 10 , pgdir 8df23000 , timer 45         INUSE
+Physical page id 13 : VPN 11 , pgdir 8df23000 , timer 46         INUSE
+Physical page id 14 : VPN 12 , pgdir 8df23000 , timer 47         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 13 , pgdir 8df23000 , timer 0 
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 14 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 3 : VPN 15 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 4 : VPN 16 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 5 : VPN 17 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 6 : VPN 18 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 14 
+checking 57352
+page to be freed id : 1
+YAYYY , ESCAPED TRAP
+
+Accessing page 12
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 13 , pgdir 8df23000 , timer 48          INUSE
+Physical page id 1 : VPN 14 , pgdir 8df23000 , timer 49          INUSE
+Physical page id 2 : VPN 20 , pgdir 8df23000 , timer 35          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 7 , pgdir 8df23000 , timer 42   INUSE
+Physical page id 10 : VPN 8 , pgdir 8df23000 , timer 43          INUSE
+Physical page id 11 : VPN 9 , pgdir 8df23000 , timer 44          INUSE
+Physical page id 12 : VPN 10 , pgdir 8df23000 , timer 45         INUSE
+Physical page id 13 : VPN 11 , pgdir 8df23000 , timer 46         INUSE
+Physical page id 14 : VPN 12 , pgdir 8df23000 , timer 47         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 19 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 14 , pgdir 8df23000 , timer 0 
+Disk page id 3 : VPN 15 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 4 : VPN 16 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 5 : VPN 17 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 6 : VPN 18 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 15 
+checking 61448
+page to be freed id : 2
+YAYYY , ESCAPED TRAP
+
+Accessing page 13
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 13 , pgdir 8df23000 , timer 48          INUSE
+Physical page id 1 : VPN 14 , pgdir 8df23000 , timer 49          INUSE
+Physical page id 2 : VPN 15 , pgdir 8df23000 , timer 50          INUSE
+Physical page id 3 : VPN 0 , pgdir 8df23000 , timer 36   INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 7 , pgdir 8df23000 , timer 42   INUSE
+Physical page id 10 : VPN 8 , pgdir 8df23000 , timer 43          INUSE
+Physical page id 11 : VPN 9 , pgdir 8df23000 , timer 44          INUSE
+Physical page id 12 : VPN 10 , pgdir 8df23000 , timer 45         INUSE
+Physical page id 13 : VPN 11 , pgdir 8df23000 , timer 46         INUSE
+Physical page id 14 : VPN 12 , pgdir 8df23000 , timer 47         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 19 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 20 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 3 : VPN 15 , pgdir 8df23000 , timer 0 
+Disk page id 4 : VPN 16 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 5 : VPN 17 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 6 : VPN 18 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 16 
+checking 65544
+page to be freed id : 3
+YAYYY , ESCAPED TRAP
+
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 13 , pgdir 8df23000 , timer 48          INUSE
+Physical page id 1 : VPN 14 , pgdir 8df23000 , timer 49          INUSE
+Physical page id 2 : VPN 15 , pgdir 8df23000 , timer 50          INUSE
+Physical page id 3 : VPN 16 , pgdir 8df23000 , timer 51          INUSE
+Physical page id 4 : VPN 2 , pgdir 8df23000 , timer 37   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 7 , pgdir 8df23000 , timer 42   INUSE
+Physical page id 10 : VPN 8 , pgdir 8df23000 , timer 43          INUSE
+Physical page id 11 : VPN 9 , pgdir 8df23000 , timer 44          INUSE
+Physical page id 12 : VPN 10 , pgdir 8df23000 , timer 45         INUSE
+Physical page id 13 : VPN 11 , pgdir 8df23000 , timer 46         INUSE
+Physical page id 14 : VPN 12 , pgdir 8df23000 , timer 47         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 19 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 20 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 3 : VPN 0 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 4 : VPN 16 , pgdir 8df23000 , timer 0 
+Disk page id 5 : VPN 17 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 6 : VPN 18 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 0 
+checking 584
+page to be freed id : 4
+YAYYY , ESCAPED TRAP
+
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 13 , pgdir 8df23000 , timer 48          INUSE
+Physical page id 1 : VPN 14 , pgdir 8df23000 , timer 49          INUSE
+Physical page id 2 : VPN 15 , pgdir 8df23000 , timer 50          INUSE
+Physical page id 3 : VPN 16 , pgdir 8df23000 , timer 51          INUSE
+Physical page id 4 : VPN 0 , pgdir 8df23000 , timer 52   INUSE
+Physical page id 5 : VPN 3 , pgdir 8df23000 , timer 38   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 7 , pgdir 8df23000 , timer 42   INUSE
+Physical page id 10 : VPN 8 , pgdir 8df23000 , timer 43          INUSE
+Physical page id 11 : VPN 9 , pgdir 8df23000 , timer 44          INUSE
+Physical page id 12 : VPN 10 , pgdir 8df23000 , timer 45         INUSE
+Physical page id 13 : VPN 11 , pgdir 8df23000 , timer 46         INUSE
+Physical page id 14 : VPN 12 , pgdir 8df23000 , timer 47         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 19 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 20 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 3 : VPN 0 , pgdir 8df23000 , timer 0 
+Disk page id 4 : VPN 2 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 5 : VPN 17 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 6 : VPN 18 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 2 
+checking 12216
+page to be freed id : 5
+YAYYY , ESCAPED TRAP
+
+Accessing page 14
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 13 , pgdir 8df23000 , timer 48          INUSE
+Physical page id 1 : VPN 14 , pgdir 8df23000 , timer 49          INUSE
+Physical page id 2 : VPN 15 , pgdir 8df23000 , timer 50          INUSE
+Physical page id 3 : VPN 16 , pgdir 8df23000 , timer 51          INUSE
+Physical page id 4 : VPN 0 , pgdir 8df23000 , timer 52   INUSE
+Physical page id 5 : VPN 2 , pgdir 8df23000 , timer 53   INUSE
+Physical page id 6 : VPN 4 , pgdir 8df23000 , timer 39   INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 7 , pgdir 8df23000 , timer 42   INUSE
+Physical page id 10 : VPN 8 , pgdir 8df23000 , timer 43          INUSE
+Physical page id 11 : VPN 9 , pgdir 8df23000 , timer 44          INUSE
+Physical page id 12 : VPN 10 , pgdir 8df23000 , timer 45         INUSE
+Physical page id 13 : VPN 11 , pgdir 8df23000 , timer 46         INUSE
+Physical page id 14 : VPN 12 , pgdir 8df23000 , timer 47         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 19 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 20 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 3 : VPN 3 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 4 : VPN 2 , pgdir 8df23000 , timer 0 
+Disk page id 5 : VPN 17 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 6 : VPN 18 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 17 
+checking 69640
+page to be freed id : 6
+YAYYY , ESCAPED TRAP
+
+Accessing page 15
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 13 , pgdir 8df23000 , timer 48          INUSE
+Physical page id 1 : VPN 14 , pgdir 8df23000 , timer 49          INUSE
+Physical page id 2 : VPN 15 , pgdir 8df23000 , timer 50          INUSE
+Physical page id 3 : VPN 16 , pgdir 8df23000 , timer 51          INUSE
+Physical page id 4 : VPN 0 , pgdir 8df23000 , timer 52   INUSE
+Physical page id 5 : VPN 2 , pgdir 8df23000 , timer 53   INUSE
+Physical page id 6 : VPN 17 , pgdir 8df23000 , timer 54          INUSE
+Physical page id 7 : VPN 5 , pgdir 8df23000 , timer 40   INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 7 , pgdir 8df23000 , timer 42   INUSE
+Physical page id 10 : VPN 8 , pgdir 8df23000 , timer 43          INUSE
+Physical page id 11 : VPN 9 , pgdir 8df23000 , timer 44          INUSE
+Physical page id 12 : VPN 10 , pgdir 8df23000 , timer 45         INUSE
+Physical page id 13 : VPN 11 , pgdir 8df23000 , timer 46         INUSE
+Physical page id 14 : VPN 12 , pgdir 8df23000 , timer 47         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 19 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 20 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 3 : VPN 3 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 4 : VPN 4 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 5 : VPN 17 , pgdir 8df23000 , timer 0 
+Disk page id 6 : VPN 18 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 18 
+checking 73736
+page to be freed id : 7
+YAYYY , ESCAPED TRAP
+
+Accessing page 16
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 2 >>> sleep  sh 80104517 801045dd 8010514d 801062e9 80105f9e
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+ << RAM >> ... 
+Physical page id 0 : VPN 13 , pgdir 8df23000 , timer 48          INUSE
+Physical page id 1 : VPN 14 , pgdir 8df23000 , timer 49          INUSE
+Physical page id 2 : VPN 15 , pgdir 8df23000 , timer 50          INUSE
+Physical page id 3 : VPN 16 , pgdir 8df23000 , timer 51          INUSE
+Physical page id 4 : VPN 0 , pgdir 8df23000 , timer 52   INUSE
+Physical page id 5 : VPN 2 , pgdir 8df23000 , timer 53   INUSE
+Physical page id 6 : VPN 17 , pgdir 8df23000 , timer 54          INUSE
+Physical page id 7 : VPN 18 , pgdir 8df23000 , timer 55          INUSE
+Physical page id 8 : VPN 6 , pgdir 8df23000 , timer 41   INUSE
+Physical page id 9 : VPN 7 , pgdir 8df23000 , timer 42   INUSE
+Physical page id 10 : VPN 8 , pgdir 8df23000 , timer 43          INUSE
+Physical page id 11 : VPN 9 , pgdir 8df23000 , timer 44          INUSE
+Physical page id 12 : VPN 10 , pgdir 8df23000 , timer 45         INUSE
+Physical page id 13 : VPN 11 , pgdir 8df23000 , timer 46         INUSE
+Physical page id 14 : VPN 12 , pgdir 8df23000 , timer 47         INUSE
+ << DISK >> ... 
+Disk page id 0 : VPN 19 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 1 : VPN 1 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 2 : VPN 20 , pgdir 8df23000 , timer 0       INUSE
+Disk page id 3 : VPN 3 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 4 : VPN 4 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 5 : VPN 5 , pgdir 8df23000 , timer 0        INUSE
+Disk page id 6 : VPN 18 , pgdir 8df23000 , timer 0 
+Disk page id 7 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 8 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 9 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 10 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 11 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 12 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 13 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Disk page id 14 : VPN 0 , pgdir 8dfbc000 , timer 0 
+Trap here :: pid 3 , VPN 19 
+checking 77832
+page to be freed id : 8
+YAYYY , ESCAPED TRAP

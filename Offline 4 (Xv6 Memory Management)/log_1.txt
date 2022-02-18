@@ -1,0 +1,451 @@
+Booting from Hard Disk..xv6...
+cpu1: starting 1
+Entry USERINIT
+Entry ALLOCPROC [ 1 ] 
+Inside allocproc : 1
+Inside inituvm ::: PPN 57277     ----    VPN 0
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+//////////////////  EXEC [ 1 ]  //////////////////
+path is /init , pgdir is 8dffe000
+:::::::From 8dfbb000 , Now 8dffe000
+Total page number needed : 1
+Inside allocuvm : 1 ::: PPN 57210        ----    VPN 0
+<<< allocating page in phyiscal memory >>>
+Inside loaduvm : 1
+Inside exec (BEFORE 2 page allocuvm): 1
+:::::::From 8dfbb000 , Now 8dffe000
+Total page number needed : 3
+Inside allocuvm : 1 ::: PPN 57208        ----    VPN 1
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 1 ::: PPN 57207        ----    VPN 2
+<<< allocating page in phyiscal memory >>>
+Inside exec (AFTER 2 page allocuvm): 1
+Exiting EXEC : 1 , pgdir is 8dfbb000
+inside freevm : 1
+Inside deallocuvm : 1 ::: PPN 57277      -----   VPN 0
+trying to remove ... pgdir 8dffe000      vpn 0
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> run    init
+pgdir 8dfbb000
+Physical Pages Used ... 
+Physical page id 0 : VPN 0 , pgdir 8dfbb000      INUSE
+Physical page id 1 : VPN 1 , pgdir 8dfbb000      INUSE
+Physical page id 2 : VPN 2 , pgdir 8dfbb000      INUSE
+Physical page id 3 : VPN 0 , pgdir 0
+Physical page id 4 : VPN 0 , pgdir 0
+Physical page id 5 : VPN 0 , pgdir 0
+Physical page id 6 : VPN 0 , pgdir 0
+Physical page id 7 : VPN 0 , pgdir 0
+Physical page id 8 : VPN 0 , pgdir 0
+Physical page id 9 : VPN 0 , pgdir 0
+Physical page id 10 : VPN 0 , pgdir 0
+Physical page id 11 : VPN 0 , pgdir 0
+Physical page id 12 : VPN 0 , pgdir 0
+Physical page id 13 : VPN 0 , pgdir 0
+Physical page id 14 : VPN 0 , pgdir 0
+>>init: starting sh
+//////////////////  FORK [ 1 ] //////////////////
+pgdir 8dfbb000
+Entry ALLOCPROC [ 2 ] 
+Inside allocproc : 2
+::: copyuvm :::: From 8dfbb000 , Now 8dfbb000
+Inside copyuvm : 1 ::: PPN 57277         ----    VPN 0
+Inside copyuvm : 1 ::: PPN 57205         ----    VPN 1
+Inside copyuvm : 1 ::: PPN 57204         ----    VPN 2
+Inside fork :: new pgdir of forked process : 8dfbe000
+Inside fork [ 1 ] --> [ 2 ] 
+Inside wait : 1
+//////////////////  EXEC [ 2 ]  //////////////////
+path is sh , pgdir is 8dfbe000
+:::::::From 8df73000 , Now 8dfbe000
+Total page number needed : 2
+Inside allocuvm : 2 ::: PPN 57138        ----    VPN 0
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 2 ::: PPN 57136        ----    VPN 1
+<<< allocating page in phyiscal memory >>>
+Inside loaduvm : 2
+Inside exec (BEFORE 2 page allocuvm): 2
+:::::::From 8df73000 , Now 8dfbe000
+Total page number needed : 4
+Inside allocuvm : 2 ::: PPN 57135        ----    VPN 2
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 2 ::: PPN 57134        ----    VPN 3
+<<< allocating page in phyiscal memory >>>
+Inside exec (AFTER 2 page allocuvm): 2
+Exiting EXEC : 2 , pgdir is 8df73000
+inside freevm : 2
+Inside deallocuvm : 2 ::: PPN 57277      -----   VPN 0
+trying to remove ... pgdir 8dfbe000      vpn 0
+mark removed
+Inside deallocuvm : 2 ::: PPN 57205      -----   VPN 1
+trying to remove ... pgdir 8dfbe000      vpn 1
+mark removed
+Inside deallocuvm : 2 ::: PPN 57204      -----   VPN 2
+trying to remove ... pgdir 8dfbe000      vpn 2
+mark removed
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 801045b7 8010467d 801051fd 80106301 8010604e
+pgdir 8dfbb000
+Physical Pages Used ... 
+Physical page id 0 : VPN 0 , pgdir 8dfbb000      INUSE
+Physical page id 1 : VPN 1 , pgdir 8dfbb000      INUSE
+Physical page id 2 : VPN 2 , pgdir 8dfbb000      INUSE
+Physical page id 3 : VPN 0 , pgdir 0
+Physical page id 4 : VPN 0 , pgdir 0
+Physical page id 5 : VPN 0 , pgdir 0
+Physical page id 6 : VPN 0 , pgdir 0
+Physical page id 7 : VPN 0 , pgdir 0
+Physical page id 8 : VPN 0 , pgdir 0
+Physical page id 9 : VPN 0 , pgdir 0
+Physical page id 10 : VPN 0 , pgdir 0
+Physical page id 11 : VPN 0 , pgdir 0
+Physical page id 12 : VPN 0 , pgdir 0
+Physical page id 13 : VPN 0 , pgdir 0
+Physical page id 14 : VPN 0 , pgdir 0
+<<< 2 >>> run    sh
+pgdir 8df73000
+Physical Pages Used ... 
+Physical page id 0 : VPN 0 , pgdir 0
+Physical page id 1 : VPN 0 , pgdir 0
+Physical page id 2 : VPN 0 , pgdir 0
+Physical page id 3 : VPN 0 , pgdir 8df73000      INUSE
+Physical page id 4 : VPN 1 , pgdir 8df73000      INUSE
+Physical page id 5 : VPN 2 , pgdir 8df73000      INUSE
+Physical page id 6 : VPN 3 , pgdir 8df73000      INUSE
+Physical page id 7 : VPN 0 , pgdir 8dfbe000
+Physical page id 8 : VPN 0 , pgdir 8dfbe000
+Physical page id 9 : VPN 0 , pgdir 8dfbe000
+Physical page id 10 : VPN 0 , pgdir 8dfbe000
+Physical page id 11 : VPN 0 , pgdir 8dfbe000
+Physical page id 12 : VPN 0 , pgdir 8dfbe000
+Physical page id 13 : VPN 0 , pgdir 8dfbe000
+Physical page id 14 : VPN 0 , pgdir 8dfbe000
+$ demoTest
+//////////////////  FORK [ 2 ] //////////////////
+pgdir 8df73000
+Entry ALLOCPROC [ 3 ] 
+Inside allocproc : 3
+[SWAP FILE] creating swap file ... 
+::: copyuvm :::: From 8df73000 , Now 8df73000
+Inside copyuvm : 2 ::: PPN 57204         ----    VPN 0
+Inside copyuvm : 2 ::: PPN 57277         ----    VPN 1
+Inside copyuvm : 2 ::: PPN 57133         ----    VPN 2
+Inside copyuvm : 2 ::: PPN 57132         ----    VPN 3
+Inside fork :: new pgdir of forked process : 8dfbc000
+Inside fork [ 2 ] --> [ 3 ] 
+Inside wait : 2
+//////////////////  GROWPROC [ 3 ] //////////////////
+:::::::From 8dfbc000 , Now 8dfbc000
+Total page number needed : 12
+Inside allocuvm : 3 ::: PPN 57131        ----    VPN 4
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57130        ----    VPN 5
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57129        ----    VPN 6
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57128        ----    VPN 7
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57127        ----    VPN 8
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57126        ----    VPN 9
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57125        ----    VPN 10
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57124        ----    VPN 11
+<<< allocating page in phyiscal memory >>>
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 801045b7 8010467d 801051fd 80106301 8010604e
+pgdir 8dfbb000
+Physical Pages Used ... 
+Physical page id 0 : VPN 0 , pgdir 8dfbb000      INUSE
+Physical page id 1 : VPN 1 , pgdir 8dfbb000      INUSE
+Physical page id 2 : VPN 2 , pgdir 8dfbb000      INUSE
+Physical page id 3 : VPN 0 , pgdir 0
+Physical page id 4 : VPN 0 , pgdir 0
+Physical page id 5 : VPN 0 , pgdir 0
+Physical page id 6 : VPN 0 , pgdir 0
+Physical page id 7 : VPN 0 , pgdir 0
+Physical page id 8 : VPN 0 , pgdir 0
+Physical page id 9 : VPN 0 , pgdir 0
+Physical page id 10 : VPN 0 , pgdir 0
+Physical page id 11 : VPN 0 , pgdir 0
+Physical page id 12 : VPN 0 , pgdir 0
+Physical page id 13 : VPN 0 , pgdir 0
+Physical page id 14 : VPN 0 , pgdir 0
+<<< 2 >>> sleep  sh 801045b7 8010467d 801051fd 80106301 8010604e
+pgdir 8df73000
+Physical Pages Used ... 
+Physical page id 0 : VPN 0 , pgdir 0
+Physical page id 1 : VPN 0 , pgdir 0
+Physical page id 2 : VPN 0 , pgdir 0
+Physical page id 3 : VPN 0 , pgdir 8df73000      INUSE
+Physical page id 4 : VPN 1 , pgdir 8df73000      INUSE
+Physical page id 5 : VPN 2 , pgdir 8df73000      INUSE
+Physical page id 6 : VPN 3 , pgdir 8df73000      INUSE
+Physical page id 7 : VPN 0 , pgdir 8dfbe000
+Physical page id 8 : VPN 0 , pgdir 8dfbe000
+Physical page id 9 : VPN 0 , pgdir 8dfbe000
+Physical page id 10 : VPN 0 , pgdir 8dfbe000
+Physical page id 11 : VPN 0 , pgdir 8dfbe000
+Physical page id 12 : VPN 0 , pgdir 8dfbe000
+Physical page id 13 : VPN 0 , pgdir 8dfbe000
+Physical page id 14 : VPN 0 , pgdir 8dfbe000
+<<< 3 >>> run    sh
+pgdir 8dfbc000
+Physical Pages Used ... 
+Physical page id 0 : VPN 4 , pgdir 8dfbc000      INUSE
+Physical page id 1 : VPN 5 , pgdir 8dfbc000      INUSE
+Physical page id 2 : VPN 6 , pgdir 8dfbc000      INUSE
+Physical page id 3 : VPN 0 , pgdir 8dfbc000      INUSE
+Physical page id 4 : VPN 1 , pgdir 8dfbc000      INUSE
+Physical page id 5 : VPN 2 , pgdir 8dfbc000      INUSE
+Physical page id 6 : VPN 3 , pgdir 8dfbc000      INUSE
+Physical page id 7 : VPN 7 , pgdir 8dfbc000      INUSE
+Physical page id 8 : VPN 8 , pgdir 8dfbc000      INUSE
+Physical page id 9 : VPN 9 , pgdir 8dfbc000      INUSE
+Physical page id 10 : VPN 10 , pgdir 8dfbc000    INUSE
+Physical page id 11 : VPN 11 , pgdir 8dfbc000    INUSE
+Physical page id 12 : VPN 0 , pgdir 8dfbc000
+Physical page id 13 : VPN 0 , pgdir 8dfbc000
+Physical page id 14 : VPN 0 , pgdir 8dfbc000
+inside morecore, after sbrk
+//////////////////  EXEC [ 3 ]  //////////////////
+path is demoTest , pgdir is 8dfbc000
+:::::::From 8df23000 , Now 8dfbc000
+Total page number needed : 1
+Inside allocuvm : 3 ::: PPN 57058        ----    VPN 0
+<<< allocating page in phyiscal memory >>>
+Inside loaduvm : 3
+Inside exec (BEFORE 2 page allocuvm): 3
+:::::::From 8df23000 , Now 8dfbc000
+Total page number needed : 3
+Inside allocuvm : 3 ::: PPN 57056        ----    VPN 1
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57055        ----    VPN 2
+<<< allocating page in phyiscal memory >>>
+Inside exec (AFTER 2 page allocuvm): 3
+Exiting EXEC : 3 , pgdir is 8df23000
+inside freevm : 3
+Inside deallocuvm : 3 ::: PPN 57204      -----   VPN 0
+trying to remove ... pgdir 8dfbc000      vpn 0
+mark removed
+Inside deallocuvm : 3 ::: PPN 57277      -----   VPN 1
+trying to remove ... pgdir 8dfbc000      vpn 1
+mark removed
+Inside deallocuvm : 3 ::: PPN 57133      -----   VPN 2
+trying to remove ... pgdir 8dfbc000      vpn 2
+mark removed
+Inside deallocuvm : 3 ::: PPN 57132      -----   VPN 3
+trying to remove ... pgdir 8dfbc000      vpn 3
+mark removed
+Inside deallocuvm : 3 ::: PPN 57131      -----   VPN 4
+trying to remove ... pgdir 8dfbc000      vpn 4
+mark removed
+Inside deallocuvm : 3 ::: PPN 57130      -----   VPN 5
+trying to remove ... pgdir 8dfbc000      vpn 5
+mark removed
+Inside deallocuvm : 3 ::: PPN 57129      -----   VPN 6
+trying to remove ... pgdir 8dfbc000      vpn 6
+mark removed
+Inside deallocuvm : 3 ::: PPN 57128      -----   VPN 7
+trying to remove ... pgdir 8dfbc000      vpn 7
+mark removed
+Inside deallocuvm : 3 ::: PPN 57127      -----   VPN 8
+trying to remove ... pgdir 8dfbc000      vpn 8
+mark removed
+Inside deallocuvm : 3 ::: PPN 57126      -----   VPN 9
+trying to remove ... pgdir 8dfbc000      vpn 9
+mark removed
+Inside deallocuvm : 3 ::: PPN 57125      -----   VPN 10
+trying to remove ... pgdir 8dfbc000      vpn 10
+mark removed
+Inside deallocuvm : 3 ::: PPN 57124      -----   VPN 11
+trying to remove ... pgdir 8dfbc000      vpn 11
+mark removed
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 801045b7 8010467d 801051fd 80106301 8010604e
+pgdir 8dfbb000
+Physical Pages Used ... 
+Physical page id 0 : VPN 0 , pgdir 8dfbb000      INUSE
+Physical page id 1 : VPN 1 , pgdir 8dfbb000      INUSE
+Physical page id 2 : VPN 2 , pgdir 8dfbb000      INUSE
+Physical page id 3 : VPN 0 , pgdir 0
+Physical page id 4 : VPN 0 , pgdir 0
+Physical page id 5 : VPN 0 , pgdir 0
+Physical page id 6 : VPN 0 , pgdir 0
+Physical page id 7 : VPN 0 , pgdir 0
+Physical page id 8 : VPN 0 , pgdir 0
+Physical page id 9 : VPN 0 , pgdir 0
+Physical page id 10 : VPN 0 , pgdir 0
+Physical page id 11 : VPN 0 , pgdir 0
+Physical page id 12 : VPN 0 , pgdir 0
+Physical page id 13 : VPN 0 , pgdir 0
+Physical page id 14 : VPN 0 , pgdir 0
+<<< 2 >>> sleep  sh 801045b7 8010467d 801051fd 80106301 8010604e
+pgdir 8df73000
+Physical Pages Used ... 
+Physical page id 0 : VPN 0 , pgdir 0
+Physical page id 1 : VPN 0 , pgdir 0
+Physical page id 2 : VPN 0 , pgdir 0
+Physical page id 3 : VPN 0 , pgdir 8df73000      INUSE
+Physical page id 4 : VPN 1 , pgdir 8df73000      INUSE
+Physical page id 5 : VPN 2 , pgdir 8df73000      INUSE
+Physical page id 6 : VPN 3 , pgdir 8df73000      INUSE
+Physical page id 7 : VPN 0 , pgdir 8dfbe000
+Physical page id 8 : VPN 0 , pgdir 8dfbe000
+Physical page id 9 : VPN 0 , pgdir 8dfbe000
+Physical page id 10 : VPN 0 , pgdir 8dfbe000
+Physical page id 11 : VPN 0 , pgdir 8dfbe000
+Physical page id 12 : VPN 0 , pgdir 8dfbe000
+Physical page id 13 : VPN 0 , pgdir 8dfbe000
+Physical page id 14 : VPN 0 , pgdir 8dfbe000
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+Physical Pages Used ... 
+Physical page id 0 : VPN 0 , pgdir 0
+Physical page id 1 : VPN 0 , pgdir 0
+Physical page id 2 : VPN 0 , pgdir 0
+Physical page id 3 : VPN 0 , pgdir 0
+Physical page id 4 : VPN 0 , pgdir 0
+Physical page id 5 : VPN 0 , pgdir 0
+Physical page id 6 : VPN 0 , pgdir 0
+Physical page id 7 : VPN 0 , pgdir 0
+Physical page id 8 : VPN 0 , pgdir 0
+Physical page id 9 : VPN 0 , pgdir 0
+Physical page id 10 : VPN 0 , pgdir 0
+Physical page id 11 : VPN 0 , pgdir 0
+Physical page id 12 : VPN 0 , pgdir 8df23000     INUSE
+Physical page id 13 : VPN 1 , pgdir 8df23000     INUSE
+Physical page id 14 : VPN 2 , pgdir 8df23000     INUSE
+//////////////////  GROWPROC [ 3 ] //////////////////
+:::::::From 8df23000 , Now 8df23000
+Total page number needed : 16
+Inside allocuvm : 3 ::: PPN 57276        ----    VPN 3
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57206        ----    VPN 4
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57279        ----    VPN 5
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57280        ----    VPN 6
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57281        ----    VPN 7
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57282        ----    VPN 8
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57283        ----    VPN 9
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57284        ----    VPN 10
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57285        ----    VPN 11
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57286        ----    VPN 12
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57287        ----    VPN 13
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57288        ----    VPN 14
+<<< allocating page in phyiscal memory >>>
+Inside allocuvm : 3 ::: PPN 57289        ----    VPN 15
+<<< reallocating page from phyiscal memory to disk >>>
+got upto here without trappppp
+<<< updating meta data >>>
+/////////////////////////////////////////////////////////
+//////////////////   PROC DUMP     //////////////////////
+/////////////////////////////////////////////////////////
+<<< 1 >>> sleep  init 801045b7 8010467d 801051fd 80106301 8010604e
+pgdir 8dfbb000
+Physical Pages Used ... 
+Physical page id 0 : VPN 0 , pgdir 8dfbb000      INUSE
+Physical page id 1 : VPN 1 , pgdir 8dfbb000      INUSE
+Physical page id 2 : VPN 2 , pgdir 8dfbb000      INUSE
+Physical page id 3 : VPN 0 , pgdir 0
+Physical page id 4 : VPN 0 , pgdir 0
+Physical page id 5 : VPN 0 , pgdir 0
+Physical page id 6 : VPN 0 , pgdir 0
+Physical page id 7 : VPN 0 , pgdir 0
+Physical page id 8 : VPN 0 , pgdir 0
+Physical page id 9 : VPN 0 , pgdir 0
+Physical page id 10 : VPN 0 , pgdir 0
+Physical page id 11 : VPN 0 , pgdir 0
+Physical page id 12 : VPN 0 , pgdir 0
+Physical page id 13 : VPN 0 , pgdir 0
+Physical page id 14 : VPN 0 , pgdir 0
+<<< 2 >>> sleep  sh 801045b7 8010467d 801051fd 80106301 8010604e
+pgdir 8df73000
+Physical Pages Used ... 
+Physical page id 0 : VPN 0 , pgdir 0
+Physical page id 1 : VPN 0 , pgdir 0
+Physical page id 2 : VPN 0 , pgdir 0
+Physical page id 3 : VPN 0 , pgdir 8df73000      INUSE
+Physical page id 4 : VPN 1 , pgdir 8df73000      INUSE
+Physical page id 5 : VPN 2 , pgdir 8df73000      INUSE
+Physical page id 6 : VPN 3 , pgdir 8df73000      INUSE
+Physical page id 7 : VPN 0 , pgdir 8dfbe000
+Physical page id 8 : VPN 0 , pgdir 8dfbe000
+Physical page id 9 : VPN 0 , pgdir 8dfbe000
+Physical page id 10 : VPN 0 , pgdir 8dfbe000
+Physical page id 11 : VPN 0 , pgdir 8dfbe000
+Physical page id 12 : VPN 0 , pgdir 8dfbe000
+Physical page id 13 : VPN 0 , pgdir 8dfbe000
+Physical page id 14 : VPN 0 , pgdir 8dfbe000
+<<< 3 >>> run    demoTest
+pgdir 8df23000
+Physical Pages Used ... 
+Physical page id 0 : VPN 15 , pgdir 8df23000     INUSE
+Physical page id 1 : VPN 4 , pgdir 8df23000      INUSE
+Physical page id 2 : VPN 5 , pgdir 8df23000      INUSE
+Physical page id 3 : VPN 6 , pgdir 8df23000      INUSE
+Physical page id 4 : VPN 7 , pgdir 8df23000      INUSE
+Physical page id 5 : VPN 8 , pgdir 8df23000      INUSE
+Physical page id 6 : VPN 9 , pgdir 8df23000      INUSE
+Physical page id 7 : VPN 10 , pgdir 8df23000     INUSE
+Physical page id 8 : VPN 11 , pgdir 8df23000     INUSE
+Physical page id 9 : VPN 12 , pgdir 8df23000     INUSE
+Physical page id 10 : VPN 13 , pgdir 8df23000    INUSE
+Physical page id 11 : VPN 14 , pgdir 8df23000    INUSE
+Physical page id 12 : VPN 0 , pgdir 8df23000     INUSE
+Physical page id 13 : VPN 1 , pgdir 8df23000     INUSE
+Physical page id 14 : VPN 2 , pgdir 8df23000     INUSE
+inside morecore, after sbrk
+pid 3 demoTest: trap 14 err 6 on cpu 0 eip 0x6e8 addr 0x3004--kill proc
+Entry EXIT [ 3 ] 
+[SWAP FILE] removing swap file ... 
+inside freevm : 2
+Inside deallocuvm : 2 ::: PPN 57058      -----   VPN 0
+trying to remove ... pgdir 8df23000      vpn 0
+Inside deallocuvm : 2 ::: PPN 57056      -----   VPN 1
+trying to remove ... pgdir 8df23000      vpn 1
+Inside deallocuvm : 2 ::: PPN 57055      -----   VPN 2
+trying to remove ... pgdir 8df23000      vpn 2
+Inside deallocuvm : 2 ::: PPN 57206      -----   VPN 4
+trying to remove ... pgdir 8df23000      vpn 4
+Inside deallocuvm : 2 ::: PPN 57279      -----   VPN 5
+trying to remove ... pgdir 8df23000      vpn 5
+Inside deallocuvm : 2 ::: PPN 57280      -----   VPN 6
+trying to remove ... pgdir 8df23000      vpn 6
+Inside deallocuvm : 2 ::: PPN 57281      -----   VPN 7
+trying to remove ... pgdir 8df23000      vpn 7
+Inside deallocuvm : 2 ::: PPN 57282      -----   VPN 8
+trying to remove ... pgdir 8df23000      vpn 8
+Inside deallocuvm : 2 ::: PPN 57283      -----   VPN 9
+trying to remove ... pgdir 8df23000      vpn 9
+Inside deallocuvm : 2 ::: PPN 57284      -----   VPN 10
+trying to remove ... pgdir 8df23000      vpn 10
+Inside deallocuvm : 2 ::: PPN 57285      -----   VPN 11
+trying to remove ... pgdir 8df23000      vpn 11
+Inside deallocuvm : 2 ::: PPN 57286      -----   VPN 12
+trying to remove ... pgdir 8df23000      vpn 12
+Inside deallocuvm : 2 ::: PPN 57287      -----   VPN 13
+trying to remove ... pgdir 8df23000      vpn 13
+Inside deallocuvm : 2 ::: PPN 57288      -----   VPN 14
+trying to remove ... pgdir 8df23000      vpn 14
+Inside deallocuvm : 2 ::: PPN 57289      -----   VPN 15
+trying to remove ... pgdir 8df23000      vpn 15
