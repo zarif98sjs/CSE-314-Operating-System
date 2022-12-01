@@ -1,5 +1,16 @@
 # **CSE-314 `Operating System Sessional`**
 
+
+This repositoy contains implementation of assignments from Operating System course, offered in Department of Computer Science and Engineering at Bangladesh University of Engineering and Technology (BUET).
+
+---
+
+### ***Disclaimer***
+
+*The repository serves as an archive for the author's solutions to the course assignments. The solutions are **not guaranteed to be full-proof**. The author is not responsible for **any damage** caused by the use of the solutions. While it can serve as a **reference**, it is strongly discouraged to copy the solutions for **academic dishonesty**, and the author is not responsible for any consequences of such actions.*
+
+---
+
  - ## **`Shell Script`**
   
     **Offline 1**
